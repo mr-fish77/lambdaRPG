@@ -26,14 +26,14 @@ public class LambdaRpg{
             if(classeJ1 == 1  ){
                 saisie1 =true;
                 System.out.println("choisi ton mage:");
-                System.out.println("1-Melichor      2-Gaspard");
+                System.out.println("1-Melchior      2-Gaspard");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
                     
                     personageJ1 = sc.nextInt();
                     if(personageJ1 == 1  ){
                         saisie2 = true;
-                        j1 = new Melichor();
+                        j1 = new Melchior();
                     }else if(personageJ1 == 2  ){
                         saisie2 = true;
                         j1 = new Gaspard();
@@ -89,14 +89,14 @@ public class LambdaRpg{
             if(classeJ2 == 1  ){
                 saisie3 =true;
                 System.out.println("choisi ton mage:");
-                System.out.println("1-Melichor      2-Gaspard");
+                System.out.println("1-Melchior      2-Gaspard");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
                     
                     personageJ2 = sc.nextInt();
                     if(personageJ2 == 1  ){
                         saisie4 = true;
-                        j2 = new Melichor();
+                        j2 = new Melchior();
                     }else if(personageJ2 == 2  ){
                         saisie4 = true;
                         j2 = new Gaspard();
