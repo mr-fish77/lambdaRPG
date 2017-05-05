@@ -1,6 +1,15 @@
 import java.util.Scanner;
 
 public class LambdaRpg{
+	
+	public static void effaceEcran () {
+		for(int i=0; i<23;i++) System.out.println();
+		String ESC = "\033[";
+		System.out.print(ESC+"0;0H");
+		System.out.print(ESC+"0;0H");
+		System.out.flush();
+	
+	}
     
     public static void main(String[] args){
         
@@ -72,6 +81,7 @@ public class LambdaRpg{
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
                 
             }
+            effaceEcran();
         }
         
         //initialisation joueur 2 même logique que pour le joueur 1
@@ -135,6 +145,7 @@ public class LambdaRpg{
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
                 
             }
+        effaceEcran();
         }
         
         //récap des choix
@@ -156,7 +167,8 @@ public class LambdaRpg{
         
         j1.mana += j1.recuperation;
         j2.mana += j2.recuperation;
-
+		
+		effaceEcran();
         System.out.println("");
         j1.statComplete();
         j2.statComplete();
