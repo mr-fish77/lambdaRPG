@@ -1,0 +1,52 @@
+
+LλmbdλRPG
+
+    Nous avons choisit de traiter le projet 4, Jeu de plateau. Ce sujet était celui qui nous offrait le plus de liberté vis à vis de la créativité et qui était donc selon nous le plus intéressant à traiter. De plus, ce sujet aborde la notion orientée objet de manière profonde et complète, nous permettant de voir plus en détail cette notion, et donc être plus à l’aise avec cette notion fondamentale en programmation. 
+    Nous avons de créer un jeu de type “RPG”, dans un univers fantastique, avec des combats au tour par tour entre deux joueurs s’affrontant sur le même ordinateur. Au début de la partie, les joueurs choisiront la classe de leur personnage, mage, guerrier, nécromancien, etc. Ces classes possèdent des attaques communes à l’ensemble de la classe, une fois déterminée, les joueurs choisissent leur personnage parmis ceux disponibles dans la classe. Ceux-ci possèdent des attaques spéciales et des caractéristiques qui leur sont propres (vie, magie, force, etc ) influençant leurs dégâts. Les combats se déroulent, comme précisé ci-dessus, au tour par tour, les attaques sont basées sur une dépense de mana, celui-ci étant récupéré à chaque tour, à une quantité dépendant de leur récupération. Le personnage qui n’a plus de vie en premier perd la partie.
+    
+(ง ͠° ل͜ °)ง THE UNSEEN DONGER IS THE DEADLIEST (ง ͠° ل͜ °)ง 
+Planing :      
+Première séance : 
+Choix du sujet (collectif).
+Choix de l’univers du jeux (collectif).
+Choix de la structure du programme (collectif).
+Début rédaction cahier des charges (Adrien et Vladimir).
+Travail à faire :
+Choix des classes, personnages, caractéristiques, attaques (Igor et Adrien).
+
+Deuxième séance : 
+Achèvement du cahier des charges (Adrien et Vladimir).
+Programmation du système de choix des personnages (Mathieu).
+Programmation guerriers et mages, 2 personnages par classe (Mathieu et Igor).
+1er essai de combat (collectif).
+Travail à faire :
+Implémentation des classes supplémentaires et des personnages manquants (Mathieu et Vladimir).
+
+Troisième séance :
+Gestion du mana (Mathieu).
+Insertion des dialogues (Igor, Vladimir et Adrien).
+Correction des bugs (collectif).
+Travail à faire :
+Recherche de failles (collectif, une classe par personne).
+Correction des erreurs (collectif, une classe par personne).
+
+Quatrième séance :
+Finir dialogues. (Igor et Adrien).
+Commentaires et génération JavaDoc. (Vladimir et Mathieu).
+Equilibre des caractéristiques et attaques. (collectif).
+Beta-Test et modification du programme en fonction des retours utilisateur.
+
+
+Orgasme HARD ( ͡° ͜ʖ ͡°)
+Travail collaboratif sur GitHub pour programmation, fichiers docs.
+CXNCXR
+
+༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽YOU CAME TO THE WRONG DONGERHOOD༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º༽
+
+ʜᴇʟʟᴏ ᴄʜᴀᴛ ɪ ᴀᴍ ғᴀᴍᴏᴜs ғᴀsᴄɪsᴛ ʟᴇᴀᴅᴇʀ, ᴀᴅᴏʟғ ʜɪᴛʟᴇʀɪɴᴏ. ᴡᴇ ᴡᴏᴜʟᴅ ʟɪᴋᴇ ʏᴏᴜ ᴀɴᴅ ɴᴀᴢɪ ᴍᴏᴅs ᴛᴏ ᴘᴀʀᴛɪᴄɪᴘᴀᴛᴇ ɪɴ ᴏᴜʀ ɴᴇᴡ ᴘʀᴏᴘᴀɢᴀɴᴅᴀ ғɪʟᴍ “sɪᴇɢ ʜᴇɪʟ ʟɪғᴇsᴛʏʟᴇ” ʏᴏᴜ ᴡᴏᴜʟᴅ ʀᴀɪsᴇ ʏᴏᴜʀ ᴅᴏɴɢᴇʀs ᴀɴᴅ ɴᴀᴢɪ ᴍᴏᴅs sᴀʏ ɴᴏ ᴘᴀsᴛᴇʀɪɴᴏ ᴀɴᴅ ʙᴀɴʜᴀᴍᴍᴇʀ.
+
+I sexually Identify as an Attack Helicopter. Ever since I was a boy I dreamed of soaring over the oilfields dropping hot sticky loads on disgusting foreigners. People say to me that a person being a helicopter is Impossible and I’m fucking retarded but I don’t care, I’m beautiful. I’m having a plastic surgeon install rotary blades, 30 mm cannons and AMG-114 Hellfire missiles on my body. From now on I want you guys to call me “Apache” and respect my right to kill from above and kill needlessly. If you can’t accept me you’re a heliphobe and need to check your vehicle privilege. Thank you for being so understanding.
+
+( ͡° ͜ʖ ͡°) Every 60 seconds in Africa, a minute passes. Together we can stop this. Please spread the word ( ͡° ͜ʖ ͡°)
+
+
