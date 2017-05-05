@@ -76,6 +76,7 @@ public class Gaspard extends Mage{
             this.defense = this.defense + augmentation;  
             System.out.println(this.nom + " change sa cape en armure d'or. Defense +20%. Vitesse -10%" );
             this.mana -= 40;
+            att = false;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
