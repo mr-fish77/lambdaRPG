@@ -15,10 +15,10 @@ public class Mage extends Personnage{
         if( this.mana >= 40){
             int degat = this.magie - J2.defense;
             if(degat >= 0){
-                J2.vie = J2.vie - this.magie + J2.defense;
+                J2.vie = J2.vie - this.magie * 2 + J2.defense;
                 System.out.println(this.nom + " fais une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
+                System.out.println("l'attaque est sans effet. L'ennemie e trop de defense !!");
             }
         
             this.mana  = this.mana - 40;
