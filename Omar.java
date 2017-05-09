@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Jackeventreur extends Assassin{
+public class Omar extends Assassin{
     int poison;
     
-    public Jackeventreur(){
+    public Omar(){
         
-        super("Jack l'Eventreur", 250, 100 , 600, 100, 250, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Omar m'a tuer", 230, 100 , 550, 120, 257, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
         int poison =0;
     }
     
@@ -23,7 +23,7 @@ public class Jackeventreur extends Assassin{
         }
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-A mort la catin    2-Aconite     3-Burqa    4- Dague vengeresse   5-Exécution     6-Passer son tour" );
+        System.out.println("1-La meca m'a tuer    2-L'info m'a tuer     3-La cristallo m'a tuer   4- Les maths m'ont tuer   5-L'insa m'a acheve     6-Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
@@ -61,7 +61,7 @@ public class Jackeventreur extends Assassin{
             
             int degat = 250;
             J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " s'acharne sur l'ennemi. IL provoque de profondes balafres à la gorge de " + J2.nom + ", puis lui mutile l'abdomen et finie avec les parties genitales Il fait " + degat + " degat a " + J2.nom);
+            System.out.println(this.nom + " Le joueur ecrit des equations avec son sang. " + J2.nom + "n'y comprend rien. Il se sent mal et subit 250 de degat");
             this.mana  = this.mana - 50;
             att =true;
         }else{
@@ -84,8 +84,8 @@ public class Jackeventreur extends Assassin{
             int diminution =  (int) J2.force * 15/100;
             J2.force = J2.force - diminution;
             int degat = 50;
-            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaiblie et voit sa defence diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 3 tours)");
-            this.poison = 3;
+            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaiblie et voit sa defence diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 4 tours)");
+            this.poison = 4;
             this.mana -= 50;
             att = true;
         }else{
