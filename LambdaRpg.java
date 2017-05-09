@@ -80,7 +80,7 @@ public class LambdaRpg{
                 
                 saisie1 = true;
                 System.out.println("choisi ton Assasin:");
-                System.out.println("1-Jack l'Eventreur      2-Omar m'a tuer");
+                System.out.println("1-Jack l'Eventreur      2-");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
                     
@@ -91,7 +91,7 @@ public class LambdaRpg{
                         j1 = new Jackeventreur();
                     }else if(personageJ1 == 2  ){
                         saisie2 = true;
-                        j1 = new Omar();
+                        //j1 = new ();
                     }else{
                         saisie2 = false;
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
@@ -102,7 +102,7 @@ public class LambdaRpg{
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
                 
             }
-           // effaceEcran();
+            effaceEcran();
         }
         
         //initialisation joueur 2 même logique que pour le joueur 1
@@ -163,9 +163,9 @@ public class LambdaRpg{
             }
             else if(classeJ2 == 3  ){
                 
-                saisie3 = true;
+                saisie1 = true;
                 System.out.println("choisi ton Assasin:");
-                System.out.println("1-Jack l'Eventreur      2-Omar m'a tuer");
+                System.out.println("1-Jack l'Eventreur      2-");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
                     
@@ -174,9 +174,9 @@ public class LambdaRpg{
                     if(personageJ2 == 1  ){
                         saisie4 = true;
                         j2 = new Jackeventreur();
-                    }else if(personageJ2 == 2  ){
-                        saisie4 = true;
-                        j2 = new Omar();
+                    }else if(personageJ1 == 2  ){
+                        saisie2 = true;
+                        //j1 = new ();
                     }else{
                         saisie4 = false;
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
@@ -187,7 +187,7 @@ public class LambdaRpg{
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
                 
             }
-        //effaceEcran();
+        effaceEcran();
         }
         
         //récap des choix
@@ -210,7 +210,7 @@ public class LambdaRpg{
         j1.mana += j1.recuperation;
         j2.mana += j2.recuperation;
 		
-		//effaceEcran();
+		effaceEcran();
         System.out.println("");
         j1.statComplete();
         j2.statComplete();
