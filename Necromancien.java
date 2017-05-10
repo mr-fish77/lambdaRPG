@@ -83,5 +83,26 @@ public class Necromancien extends Personnage{
         
     }
     
+     public boolean malediction(Personnage J2){
+        boolean att = false;
+        
+        if( this.mana >= 40){
+            
+            int degat =  (int) J2.vie * 10/100;
+            J2.vie = J2.vie - degat;
+            this.mana = this.mana + degat;
+            System.out.println(this.nom + " Convertie 10% de la vie de " +J2.nom+ " en mana." +J2.nom+ "subit" + degat);
+            this.mana  = this.mana - 40;
+            att =true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+        
+        return att;
+        
+    }
+    
 }
     

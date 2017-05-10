@@ -23,7 +23,7 @@ public class LambdaRpg{
         //initialisation joueur 1
        
         System.out.println("joueur 1 Choisis ta classe:");
-        System.out.println("1-Mage      2-Guerrier    3-Assassin");
+        System.out.println("1-Mage      2-Guerrier    3-Assassin    4-Necromancien");
         
         boolean saisie1 = false;
         boolean saisie2 = false;
@@ -53,7 +53,7 @@ public class LambdaRpg{
                 }
                     
                     
-                
+               
             }else if(classeJ1 == 2  ){
                 
                 saisie1 = true;
@@ -75,8 +75,7 @@ public class LambdaRpg{
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
-            }
-            else if(classeJ1 == 3  ){
+            }else if(classeJ1 == 3  ){
                 
                 saisie1 = true;
                 System.out.println("choisi ton Assasin:");
@@ -97,6 +96,27 @@ public class LambdaRpg{
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
+            }else if(classeJ1 == 4  ){
+                
+                saisie1 = true;
+                System.out.println("choisi ton Necromancien");
+                System.out.println("1-Isis      2-Hades");
+                                
+                while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
+                    
+                    personageJ1 = sc.nextInt();
+                    
+                    if(personageJ1 == 1  ){
+                        saisie2 = true;
+                        j1 = new Isis();
+                    }else if(personageJ1 == 2  ){
+                        saisie2 = true;
+                        j1 = new Hades();
+                    }else{
+                        saisie2 = false;
+                        System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
+                    }
+                }
             }else{
                 saisie1 = false;
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
@@ -108,7 +128,7 @@ public class LambdaRpg{
         //initialisation joueur 2 même logique que pour le joueur 1
         
         System.out.println("joueur 2 Choisis ta classe:");
-        System.out.println("1-Mage      2-Guerrier      3-Assassin");
+        System.out.println("1-Mage      2-Guerrier      3-Assassin    4-Necromancien");
         
         boolean saisie3 = false;
         boolean saisie4 = false;
@@ -177,6 +197,27 @@ public class LambdaRpg{
                     }else if(personageJ2 == 2  ){
                         saisie4 = true;
                         j2 = new Omar();
+                    }else{
+                        saisie4 = false;
+                        System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
+                    }
+                }
+            }else if(classeJ2 == 4  ){
+                
+                saisie3 = true;
+                System.out.println("choisi ton Necromancien");
+                System.out.println("1-Isis      2-Hades");
+                                
+                while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
+                    
+                    personageJ2 = sc.nextInt();
+                    
+                    if(personageJ2 == 1  ){
+                        saisie4 = true;
+                        j2 = new Isis();
+                    }else if(personageJ2 == 2  ){
+                        saisie4 = true;
+                        j2 = new Hades();
                     }else{
                         saisie4 = false;
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
