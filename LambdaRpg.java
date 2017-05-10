@@ -35,7 +35,7 @@ public class LambdaRpg{
             if(classeJ1 == 1  ){
                 saisie1 =true;
                 System.out.println("ton mage:");
-                System.out.println("1-Melchior      2-Gaspard    3-Balthazar");
+                System.out.println("1-Melchior      2-Gaspard    3-Balthazar   4-Pikachu");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
                     
@@ -49,6 +49,9 @@ public class LambdaRpg{
                     }else if(personageJ1 == 3  ){
                         saisie2 = true;
                         j1 = new Balthazar();    
+                    }else if(personageJ1 == 4  ){
+                        saisie2 = true;
+                        j1 = new Pikachu(); 
                     }else{
                         saisie2 = false;
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
@@ -152,7 +155,7 @@ public class LambdaRpg{
             if(classeJ2 == 1  ){
                 saisie3 =true;
                 System.out.println("choisi ton mage:");
-                System.out.println("1-Melchior      2-Gaspard   3-Balthazar");
+                System.out.println("1-Melchior      2-Gaspard   3-Balthazar  4-Pikachu");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
                     
@@ -166,6 +169,9 @@ public class LambdaRpg{
                     }else if(personageJ2 == 3  ){
                         saisie4 = true;
                         j2 = new Balthazar();    
+                    }else if(personageJ2 == 4  ){
+                        saisie4 = true;
+                        j2 = new Pikachu(); 
                     }else{
                         saisie4 = false;
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");

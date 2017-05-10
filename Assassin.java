@@ -14,7 +14,7 @@ public class Assassin extends Personnage{
         boolean att = false;
         
         if( this.mana >= 30){
-            int degat = this.force - J2.defense;
+            int degat = this.vitesse/10 + this.force/2 - J2.defense/5;
             if(degat >= 0){
                 J2.vie = J2.vie - this.force + J2.defense;
                 System.out.println(this.nom + " fais une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
@@ -38,7 +38,7 @@ public class Assassin extends Personnage{
         boolean att = false;
         
         if( this.mana >= 10){
-            int degat =  this.vitesse - J2.defense;
+            int degat =  this.vitesse/2 + this.force/10 - J2.defense/5;
             if(degat >= 0){
                 J2.vie = J2.vie - this.vitesse + J2.defense;
                 System.out.println(this.nom + " fais une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );

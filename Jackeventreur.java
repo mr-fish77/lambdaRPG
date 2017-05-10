@@ -42,6 +42,9 @@ public class Jackeventreur extends Assassin{
                     attok = attaqueRapide(J2);
                 break;
                 case 5:
+                    attok = attaquePuissante(J2);
+                break;
+                case 6:
                     System.out.println(this.nom +  " passe son tour !");
                     attok = true;
                 break;
