@@ -55,7 +55,7 @@ public class Hades extends Necromancien{
             this.vie =(int) (this.vie* 0.9);
             J2.vie = (int)(J2.vie* 0.7);
             this.defense = this.defense*2;
-            System.out.println(this.nom + " Persephone ouvre la porte des enfers !!" +this.nom + " perd 10% de vie mais " +J2.nom+ " en pert 30%");
+            System.out.println(this.nom + " Persephone ouvre la porte des enfers !! " +this.nom + " perd 10% de vie mais " +J2.nom+ " en pert 30%");
             this.mana  = this.mana - 50;
             att =true;
         }else{
