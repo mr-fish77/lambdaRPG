@@ -13,7 +13,7 @@ public class Pikachu extends Mage{
         Scanner sc = new Scanner(System.in);
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-Fatal Foudre      2-La Main De Midas     3-Yami no mahO    4- Flammeche    5-Passer son tour");
+        System.out.println("1-Fatal Foudre      2-Boul'armure     3-Vive attaque    4- Queue de fer    5-Passer son tour");
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
@@ -23,7 +23,7 @@ public class Pikachu extends Mage{
                     attok = pika(J2);
                 break;
                 case 2:
-                    attok = laMainDeMidas();
+                    attok = boularmure();
                 break;
                 case 3:
                     attok = attaqueRapide(J2);
@@ -51,7 +51,7 @@ public class Pikachu extends Mage{
         if( this.mana >= 50){
             int degat = (int)( Math.random()*( J2.vie + 1 ) );
             J2.vie -= degat;
-            System.out.println( this.nom + " utilise Fatal Foudre, "+ J2.nom+ " subit " + degat + " degats" );
+            System.out.println( "Pikaaaaachuuuuuuu !!! "+ J2.nom+ " subit " + degat + " degats" );
             this.mana -= 10;
             att = true;
         
@@ -65,17 +65,16 @@ public class Pikachu extends Mage{
     }
     
     
-    public boolean laMainDeMidas(){
+    public boolean boularmure(){
         
         boolean att = false;
         
         if( this.mana >= 40){
         
-            int diminution =  (int) this.vitesse * 10/100;
-            this.vitesse = this.vitesse - diminution;
+            
             int augmentation =  (int) this.defense * 20/100;
             this.defense = this.defense + augmentation;  
-            System.out.println(this.nom + " change sa cape en armure d'or. Defense +20%. Vitesse -10%" );
+            System.out.println(this.nom + " se roule en boule. Defense +20%." );
             this.mana -= 40;
             att = false;
         }else{
@@ -87,6 +86,7 @@ public class Pikachu extends Mage{
         return att;
 
     }
+   
     
     
 }
