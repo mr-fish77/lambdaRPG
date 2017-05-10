@@ -14,14 +14,14 @@ public class Hades extends Necromancien{
         Scanner sc = new Scanner(System.in);
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-Perséphone gate   2-Malediction    3-Lance de macchabées   4- Caresse de la mort   5-Noces funebres     6-Passer son tour" );
+        System.out.println("1-Persephone Gate   2-Malediction    3-Lance de macchabées   4- Caresse de la mort   5-Noces funebres     6-Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
             
             switch (choixAttaque){
                 case 1:
-                    attok = persephonegate(J2);
+                    attok = persephone(J2);
                 break;
                 case 2:
                     attok = malediction(J2);
@@ -48,16 +48,14 @@ public class Hades extends Necromancien{
         
     }
        
-    public boolean persephonegate(Personnage J2){
+    public boolean persephone(Personnage J2){
         boolean att = false;
         
         if( this.mana >= 50){
-            
-            int degat =  (int) J2.vie * 30/100;
-            J2.vie = J2.vie - degat;
-            int degat2 =  (int) J2.vie * 10/100;
-            this.vie = this.vie - degat2;
-            System.out.println(this.nom + "Persephone ouvre la porte des enfers !!" +this.nom + "perd 10% de vie mais " +J2.nom+ " en pert 30%");
+            this.vie =(int) (this.vie* 0.9);
+            J2.vie = (int)(J2.vie* 0.7);
+            this.defense = this.defense*2;
+            System.out.println(this.nom + " Persephone ouvre la porte des enfers !!" +this.nom + " perd 10% de vie mais " +J2.nom+ " en pert 30%");
             this.mana  = this.mana - 50;
             att =true;
         }else{

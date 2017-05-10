@@ -48,11 +48,11 @@ public class Pikachu extends Mage{
         
         boolean att = false;
                 
-        if( this.mana >= 50){
+        if( this.mana >= 80){
             int degat = (int)( Math.random()*( J2.vie + 1 ) );
             J2.vie -= degat;
             System.out.println( "Pikaaaaachuuuuuuu !!! "+ J2.nom+ " subit " + degat + " degats" );
-            this.mana -= 10;
+            this.mana -= 80;
             att = true;
         
         }else{
