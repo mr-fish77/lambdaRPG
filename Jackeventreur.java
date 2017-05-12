@@ -23,7 +23,7 @@ public class Jackeventreur extends Assassin{
         }
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-A mort la catin    2-Aconite     3-Burqa    4- Dague vengeresse   5-Exécution     6-Passer son tour" );
+        System.out.println("1-A mort la catin    2-Aconite     3-Burqa    4- Dague vengeresse   5-Execution     6-Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
@@ -64,7 +64,7 @@ public class Jackeventreur extends Assassin{
             
             int degat = 250;
             J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " s'acharne sur l'ennemi. IL provoque de profondes balafres à la gorge de " + J2.nom + ", puis lui mutile l'abdomen et finie avec les parties genitales Il fait " + degat + " degat a " + J2.nom);
+            System.out.println(this.nom + " s'acharne sur l'ennemi. IL provoque de profondes balafres a la gorge de " + J2.nom + ", puis lui mutile l'abdomen et finit avec les parties genitales. Il fait " + degat + " degats a " + J2.nom);
             this.mana  = this.mana - 50;
             att =true;
         }else{
@@ -87,7 +87,7 @@ public class Jackeventreur extends Assassin{
             int diminution =  (int) J2.force * 15/100;
             J2.force = J2.force - diminution;
             int degat = 50;
-            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaiblie et voit sa defense diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 3 tours)");
+            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaibli et voit sa defense diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 3 tours)");
             this.poison = 3;
             this.mana -= 50;
             att = true;
