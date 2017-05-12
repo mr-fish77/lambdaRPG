@@ -15,9 +15,9 @@ public class LambdaRpg{
     
     public static void intro () {
         
-        System.out.println("Veuillez passe votre invite de commande en plein ecran pour une meilleur experience de jeu");
+        System.out.println("Veuillez passer votre invite de commande en plein ecran pour une meilleur experience de jeu");
         System.out.println("");
-        System.out.println("Appuiez sur espace puis entree pour commencer");
+        System.out.println("Appuyez sur espace puis entree pour commencer");
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
 		
@@ -49,7 +49,7 @@ public class LambdaRpg{
         
         //initialisation joueur 1
        
-        System.out.println("joueur 1 Choisis ta classe:");
+        System.out.println("Joueur 1 choisis ta classe:");
         System.out.println("1-Mage      2-Guerrier    3-Assassin    4-Necromancien");
         
         boolean saisie1 = false;
@@ -61,7 +61,7 @@ public class LambdaRpg{
             
             if(classeJ1 == 1  ){
                 saisie1 =true;
-                System.out.println("ton mage:");
+                System.out.println("Ton mage:");
                 System.out.println("1-Melchior      2-Gaspard    3-Balthazar   4-Pikachu");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
@@ -90,7 +90,7 @@ public class LambdaRpg{
             }else if(classeJ1 == 2  ){
                 
                 saisie1 = true;
-                System.out.println("choisi ton guerrier:");
+                System.out.println("Choisis ton guerrier:");
                 System.out.println("1-Kim jong un     2-Achille     3-Spartacus");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
@@ -114,7 +114,7 @@ public class LambdaRpg{
             }else if(classeJ1 == 3  ){
                 
                 saisie1 = true;
-                System.out.println("choisi ton Assasin:");
+                System.out.println("Choisis ton Assasin:");
                 System.out.println("1-Jack l'Eventreur   2-Omar m'a tuer   3-Ezio Auditore da Firenze");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
@@ -138,7 +138,7 @@ public class LambdaRpg{
             }else if(classeJ1 == 4  ){
                 
                 saisie1 = true;
-                System.out.println("choisi ton Necromancien");
+                System.out.println("Choisis ton Necromancien");
                 System.out.println("1-Isis      2-Hades   3-Sauron");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
@@ -169,7 +169,7 @@ public class LambdaRpg{
         
         //initialisation joueur 2 même logique que pour le joueur 1
         
-        System.out.println("joueur 2 Choisis ta classe:");
+        System.out.println("Joueur 2 choisis ta classe:");
         System.out.println("1-Mage      2-Guerrier      3-Assassin    4-Necromancien");
         
         boolean saisie3 = false;
@@ -181,7 +181,7 @@ public class LambdaRpg{
             
             if(classeJ2 == 1  ){
                 saisie3 =true;
-                System.out.println("choisi ton mage:");
+                System.out.println("Choisis ton mage:");
                 System.out.println("1-Melchior      2-Gaspard   3-Balthazar  4-Pikachu");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
@@ -210,7 +210,7 @@ public class LambdaRpg{
             }else if(classeJ2 == 2  ){
                 
                 saisie3 = true;
-                System.out.println("choisi ton guerrier:");
+                System.out.println("Choisis ton guerrier:");
                 System.out.println("1-Kim jong un   2-Achille   3-Spartacus");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
