@@ -64,7 +64,7 @@ public class Omar extends Assassin{
             
             int degat = 250;
             J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " Le joueur ecrit des equations avec son sang. " + J2.nom + "n'y comprend rien. Il se sent mal et subit 250 de degat");
+            System.out.println(this.nom + " Le joueur ecrit des equations avec son sang. " + J2.nom + " n'y comprend rien. Il se sent mal et subit 250 de degat");
             this.mana  = this.mana - 50;
             att =true;
         }else{
