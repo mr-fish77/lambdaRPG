@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.*;
+
 
 public class LambdaRpg{
 	
@@ -11,10 +13,34 @@ public class LambdaRpg{
 	
 	}
     
+    public static void intro () {
+        
+        System.out.println("Veuillez passe votre invite de commande en plein ecran pour une meilleur experience de jeu");
+        System.out.println("");
+        System.out.println("Appuiez sur espace puis entree pour commencer");
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		
+		try{
+            InputStream flux=new FileInputStream("LambdAsciiGS.txt"); 
+            InputStreamReader lecture=new InputStreamReader(flux);
+            BufferedReader buff=new BufferedReader(lecture);
+            String ligne;
+            while ((ligne=buff.readLine())!=null){
+                System.out.println(ligne);
+            }
+            buff.close(); 
+        }		
+        catch (Exception e){
+            System.out.println(e.toString());
+        }
+	}
+    
     
     public static void main(String[] args){
         
         
+        intro();
         //debut de la partie
         
         Scanner sc = new Scanner(System.in);
