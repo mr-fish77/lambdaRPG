@@ -53,9 +53,9 @@ public class Kimjongun extends Guerrier{
         
         if( this.mana >= 50){
             
-            int degat = 250;
+            int degat = this.vitesse;
             J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " lance ses missiles sur l'adversaire!! La defense " + J2.nom + " est sans effet !!   Il fait " + degat + " a " + J2.nom);
+            System.out.println(this.nom + " lance ses missiles sur l'adversaire!! La defense de " + J2.nom + " est sans effet !!   Il fait " + degat + " a " + J2.nom);
             this.mana  = this.mana - 50;
             att =true;
         }else{
