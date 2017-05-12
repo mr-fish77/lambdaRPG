@@ -19,7 +19,7 @@ public class Assassin extends Personnage{
                 J2.vie -= degat;
                 System.out.println(this.nom + " fais une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
             this.mana  = this.mana - 30;
             att =true;
@@ -43,7 +43,7 @@ public class Assassin extends Personnage{
                 J2.vie -= degat;
                 System.out.println(this.nom + " fais une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
         this.mana  = this.mana - 10;
         att =true;

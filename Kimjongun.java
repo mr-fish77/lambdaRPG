@@ -4,7 +4,7 @@ public class Kimjongun extends Guerrier{
 
     public Kimjongun(){
         
-        super("Kimjongun", 350, 100 , 250, 170, 120, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Kim jong un", 350, 100 , 250, 170, 120, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
 
     }
     
@@ -55,7 +55,7 @@ public class Kimjongun extends Guerrier{
             
             int degat = 250;
             J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " lance ses missiles sur l'adversaire!! La défense " + J2.nom + " est sans effet !!   Il fait " + degat + " a " + J2.nom);
+            System.out.println(this.nom + " lance ses missiles sur l'adversaire!! La defense " + J2.nom + " est sans effet !!   Il fait " + degat + " a " + J2.nom);
             this.mana  = this.mana - 50;
             att =true;
         }else{
