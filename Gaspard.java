@@ -37,7 +37,7 @@ public class Gaspard extends Mage{
                 break;
                 default:
                     attok = false;
-                    System.out.println("attaque saisie incorrect. Rechoisi ton attaque !! ");
+                    System.out.println("attaque saisie incorrecte. Rechoisi ton attaque !! ");
                 break;
             }
         }
@@ -51,7 +51,7 @@ public class Gaspard extends Mage{
         if( this.mana >= 50){
             int diminution =  (int) J2.force * 15/100;
             J2.force = J2.force - diminution;
-            System.out.println( this.nom + " lance un nuage d'encens qui  affaiblit " + J2.nom + " La force de " +J2.nom + "diminue de 15% ");
+            System.out.println( this.nom + " lance un nuage d'encens qui affaiblit " + J2.nom + ". La force de " +J2.nom + "diminue de 15% ");
             this.mana -= 50;
             att = true;
         }else{

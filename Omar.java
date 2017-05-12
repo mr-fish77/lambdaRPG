@@ -23,7 +23,7 @@ public class Omar extends Assassin{
         }
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-La meca m'a tuer    2-L'info m'a tuer     3-La cristallo m'a tuer   4- Les maths m'ont tuer   5-L'insa m'a acheve     6-Passer son tour" );
+        System.out.println("1-La meca m'a tuer    2-L'info m'a tuer     3-La cristallo m'a tuer   4- Les maths m'ont tuer   5-L'insa m'a achever     6-Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
@@ -50,7 +50,7 @@ public class Omar extends Assassin{
                 break;
                 default:
                     attok = false;
-                    System.out.println("attaque saisie incorrect. Rechoisi ton attaque !! ");
+                    System.out.println("attaque saisie incorrecte. Rechoisi ton attaque !! ");
                 break;
             }
         }
@@ -87,7 +87,7 @@ public class Omar extends Assassin{
             int diminution =  (int) J2.force * 15/100;
             J2.force = J2.force - diminution;
             int degat = 50;
-            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaiblie et voit sa defence diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 4 tours)");
+            System.out.println( this.nom + " s'infiltre dans le camp ennemi et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaibli et voit sa defense diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 4 tours)");
             this.poison = 4;
             this.mana -= 50;
             att = true;

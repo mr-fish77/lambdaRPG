@@ -12,7 +12,7 @@ public class Achille extends Guerrier{
         Scanner sc = new Scanner(System.in);
         boolean attok = false;
         
-        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque :");
         System.out.println("1-Talonnette     2-Boularmure     3-Tibo Yinshape    4- Pichenette   5-This is sparta   6-Passer son tour" );
         
         while(attok == false){
@@ -40,7 +40,7 @@ public class Achille extends Guerrier{
                 break;
                 default:
                     attok = false;
-                    System.out.println("attaque saisie incorrect. Rechoisi ton attaque !! ");
+                    System.out.println("attaque saisie incorrecte. Rechoisi ton attaque !! ");
                 break;
             }
         }
@@ -54,7 +54,7 @@ public class Achille extends Guerrier{
             
              int degat = 250;
             J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " se propule sur l'ennemie par la force se son talon!! La défense " + J2.nom + " est sans effet !!   Il fait " + degat + " a "+ J2.nom);
+            System.out.println(this.nom + " se propulse sur l'ennemi par la force se son talon !! La défense " + J2.nom + " est sans effet !! Il fait " + degat + " a "+ J2.nom);
             
             this.mana  = this.mana - 50;
             att =true;

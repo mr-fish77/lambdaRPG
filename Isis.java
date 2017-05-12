@@ -14,7 +14,7 @@ public class Isis extends Necromancien{
         Scanner sc = new Scanner(System.in);
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-Sacrifice   2-Malediction    3-Lance de macchabees   4- Caresse de la mort   5-Noces funebres     6-Passer son tour" );
+        System.out.println("1-Sacrifice   2-Malediction    3-Lance de macchabes   4- Caresse de la mort   5-Noces funebres     6-Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
@@ -41,7 +41,7 @@ public class Isis extends Necromancien{
                 break;
                 default:
                     attok = false;
-                    System.out.println("attaque saisie incorrect. Rechoisi ton attaque !! ");
+                    System.out.println("attaque saisie incorrecte. Rechoisi ton attaque !! ");
                 break;
             }
         }

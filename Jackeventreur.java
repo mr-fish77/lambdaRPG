@@ -50,7 +50,7 @@ public class Jackeventreur extends Assassin{
                 break;
                 default:
                     attok = false;
-                    System.out.println("attaque saisie incorrect. Rechoisi ton attaque !! ");
+                    System.out.println("attaque saisie incorrecte. Rechoisi ton attaque !! ");
                 break;
             }
         }
@@ -87,7 +87,7 @@ public class Jackeventreur extends Assassin{
             int diminution =  (int) J2.force * 15/100;
             J2.force = J2.force - diminution;
             int degat = 50;
-            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaiblie et voit sa defence diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 3 tours)");
+            System.out.println( this.nom + " s'infiltre dans le camp ennemie et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaiblie et voit sa defense diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 3 tours)");
             this.poison = 3;
             this.mana -= 50;
             att = true;
