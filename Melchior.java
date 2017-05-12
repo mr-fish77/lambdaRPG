@@ -3,7 +3,7 @@ public class Melchior extends Mage{
 
     public Melchior(){
         
-        super("Melchior", 500, 100 , 50, 100, 200, 400, 10); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Melchior", 500, 100 , 50, 100, 200, 400, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
     public void  attaquer(Personnage J2){

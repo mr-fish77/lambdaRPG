@@ -5,7 +5,7 @@ public class Jackeventreur extends Assassin{
     
     public Jackeventreur(){
         
-        super("Jack l'Eventreur", 250, 100 , 600, 100, 250, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Jack l'Eventreur", 250, 100 , 600, 100, 250, 0, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
         int poison =0;
     }
     

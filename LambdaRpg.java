@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class LambdaRpg{
 	
 	public static void effaceEcran () {
-		for(int i=0; i<23;i++) System.out.println();
+		for(int i=0; i<25;i++) System.out.println();
 		String ESC = "\033[";
 		System.out.print(ESC+"0;0H");
 		System.out.print(ESC+"0;0H");
@@ -138,7 +138,7 @@ public class LambdaRpg{
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
                 
             }
-           // effaceEcran();
+            effaceEcran();
         }
         
         //initialisation joueur 2 même logique que pour le joueur 1
@@ -270,7 +270,7 @@ public class LambdaRpg{
         
     while( (j1.vie > 0) && (j2.vie > 0) ){
         
-        System.out.println("");
+        for(int i=0;i<5;i++)System.out.println("");
         
         j1.attaquer(j2);
         
@@ -282,7 +282,7 @@ public class LambdaRpg{
         j1.mana += j1.recuperation;
         j2.mana += j2.recuperation;
 		
-		//effaceEcran();
+		effaceEcran();
         
         j1.statComplete();
         j2.statComplete();

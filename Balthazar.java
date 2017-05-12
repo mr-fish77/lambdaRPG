@@ -4,7 +4,7 @@ public class Balthazar extends Mage{
 
     public Balthazar(){
         
-        super("Balthazar", 700, 100 , 50, 85, 230, 350, 10); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Balthazar", 700, 100 , 50, 85, 230, 350, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

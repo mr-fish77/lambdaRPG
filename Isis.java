@@ -4,7 +4,7 @@ public class Isis extends Necromancien{
     
     public Isis(){
         
-        super("Isis", 500, 100 , 50, 100, 200, 450, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Isis", 500, 100 , 50, 100, 200, 450, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

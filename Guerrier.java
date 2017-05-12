@@ -17,7 +17,7 @@ public class Guerrier extends Personnage{
             int degat = this.vitesse/10 + this.force/2 - J2.defense/5;
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fais une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
             }
@@ -41,7 +41,7 @@ public class Guerrier extends Personnage{
             int degat =  this.vitesse/2 + this.force/10 - J2.defense/5;
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fais une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
             }
@@ -59,13 +59,13 @@ public class Guerrier extends Personnage{
     public boolean augmentationDefense(){
         boolean att = false;
         
-        if( this.mana >= 40){
+        if( this.mana >= 20){
             
-            int augmentation =  (int) this.defense * 10/100;
-            this.defense = this.defense + augmentation; 
+           
+            this.defense = (int) (this.defense *1.1); 
             System.out.println(this.nom + " se met en boule. Defense +10% " );
             
-            this.mana  = this.mana - 40;
+            this.mana  = this.mana - 20;
             att =true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -80,13 +80,13 @@ public class Guerrier extends Personnage{
     public boolean augmentationForce(){
         boolean att = false;
         
-        if( this.mana >= 40){
+        if( this.mana >= 20){
             
-            int augmentation =  (int) this.force * 10/100;
-            this.force = this.force + augmentation; 
-            System.out.println(this.nom + " se met en boule. Defense +10% " );
+           
+            this.force = (int) (this.force * 1.1); 
+            System.out.println(this.nom + " se prepare un Riz-Dinde. Force +10% " );
             
-            this.mana  = this.mana - 40;
+            this.mana  = this.mana - 20;
             att =true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );

@@ -5,7 +5,7 @@ public class Ezio extends Assassin{
     
     public Ezio(){
         
-        super("Ezio Auditore da Firenze", 280, 100 , 650, 110, 230, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Ezio Auditore da Firenze", 280, 100 , 650, 110, 230, 0, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
         int poison =0;
     }
     

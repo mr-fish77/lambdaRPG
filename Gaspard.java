@@ -4,7 +4,7 @@ public class Gaspard extends Mage{
 
     public Gaspard(){
         
-        super("Gaspard", 600, 100 , 50, 90, 180, 300, 10); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Gaspard", 600, 100 , 50, 90, 180, 300, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

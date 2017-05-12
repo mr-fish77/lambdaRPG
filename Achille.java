@@ -4,7 +4,7 @@ public class Achille extends Guerrier{
 
     public Achille(){
         
-        super("Achille", 250, 100 , 350, 230, 110, 0, 10); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Achille", 250, 100 , 350, 230, 110, 0, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

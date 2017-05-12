@@ -17,7 +17,7 @@ public class Necromancien extends Personnage{
             int degat = this.vitesse/10 + this.force/2 - J2.defense/5;
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fais une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
             }
@@ -41,7 +41,7 @@ public class Necromancien extends Personnage{
             int degat =  this.vitesse/2 + this.force/10 - J2.defense/5;
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fais une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
             }

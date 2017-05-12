@@ -4,7 +4,7 @@ public class Sauron extends Necromancien{
     
     public Sauron(){
         
-        super("Sauron", 700, 100 , 50, 85, 230, 350, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Sauron", 700, 100 , 50, 85, 230, 350, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

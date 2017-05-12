@@ -4,7 +4,7 @@ public class Spartacus extends Guerrier{
 
     public Spartacus(){
         
-        super("Spartacus", 300, 100 , 300, 200, 100, 0, 10); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Spartacus", 300, 100 , 300, 200, 100, 0, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

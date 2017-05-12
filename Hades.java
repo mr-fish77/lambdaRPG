@@ -4,7 +4,7 @@ public class Hades extends Necromancien{
     
     public Hades(){
         
-        super("Hades", 600, 100 , 50, 90, 180, 450, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Hades", 600, 100 , 50, 90, 180, 450, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){

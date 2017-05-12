@@ -5,7 +5,7 @@ public class Omar extends Assassin{
     
     public Omar(){
         
-        super("Omar m'a tuer", 230, 100 , 550, 120, 257, 0, 10);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Omar m'a tuer", 230, 100 , 550, 120, 257, 0, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
         int poison =0;
     }
     
