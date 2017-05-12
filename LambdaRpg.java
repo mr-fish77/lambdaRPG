@@ -5,7 +5,7 @@ import java.io.*;
 public class LambdaRpg{
 	
 	public static void effaceEcran () {
-		for(int i=0; i<25;i++) System.out.println();
+		for(int i=0; i<50;i++) System.out.println();
 		String ESC = "\033[";
 		System.out.print(ESC+"0;0H");
 		System.out.print(ESC+"0;0H");
@@ -235,7 +235,7 @@ public class LambdaRpg{
             else if(classeJ2 == 3  ){
                 
                 saisie3 = true;
-                System.out.println("choisi ton Assasin:");
+                System.out.println("Choisis ton Assasin:");
                 System.out.println("1-Jack l'Eventreur   2-Omar m'a tuer   3-Ezio Auditore da Firenze");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
@@ -259,7 +259,7 @@ public class LambdaRpg{
             }else if(classeJ2 == 4  ){
                 
                 saisie3 = true;
-                System.out.println("choisi ton Necromancien");
+                System.out.println("Choisis ton Necromancien");
                 System.out.println("1-Isis     2-Hades       3-Sauron");
                                 
                 while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
