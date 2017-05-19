@@ -77,28 +77,4 @@ public class Omar extends Assassin{
         
     }
     
-     
-    public boolean aconite(Personnage J2){
-        
-        
-        boolean att = false;
-        
-        if( this.mana >= 50){
-            int diminution =  (int) J2.force * 15/100;
-            J2.force = J2.force - diminution;
-            int degat = 50;
-            System.out.println( this.nom + " s'infiltre dans le camp ennemi et empoisonne l'eau de l'adversaire. " + J2.nom + " est afaibli et voit sa defense diminuer de 15% et est empoisonne!! (" + degat + " degats pendant 4 tours)");
-            this.poison = 4;
-            this.mana -= 50;
-            att = true;
-        }else{
-            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
-            System.out.println("Rechoisi ton attaque !! ");
-            att = false;
-        }
-        
-        return att;
-    }
-        
-    
 }
