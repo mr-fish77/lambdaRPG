@@ -59,7 +59,7 @@ public class Gaspard extends Mage{
         if( this.mana >= 50){ //condition de mana
             int diminution =  (int) J2.force * 15/100; //calcul de la diminution de force
             J2.force = J2.force - diminution; //calcul la nouvelle force
-            System.out.println( this.nom + " lance un nuage d'encens qui affaiblit " + J2.nom + ". La force de " +J2.nom + "diminue de 15% ");
+            System.out.println( this.nom + " lance un nuage d'encens qui affaiblit " + J2.nom + ". La force de " +J2.nom + " diminue de 15% ");
             this.mana -= 50; //cout en mana de l'attaque
             att = true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
         }else{
