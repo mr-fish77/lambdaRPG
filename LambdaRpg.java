@@ -1,10 +1,12 @@
-import java.util.Scanner;
-import java.io.*;
+import java.util.Scanner; // importe la classe Scanner du package java.util
+import java.io.*; //importe l'ensemble du package java.io
 
 
 public class LambdaRpg{
-	
-	public static void effaceEcran () {
+      /*
+      *  Permet d'éfface l'invitée de commande sous Linux
+      */
+     public static void effaceEcran () {   
 		for(int i=0; i<50;i++) System.out.println();
 		String ESC = "\033[";
 		System.out.print(ESC+"0;0H");
@@ -12,16 +14,19 @@ public class LambdaRpg{
 		System.out.flush();
 	
 	}
-    
+    /*
+     *  Permet d'afficher l'écran de démarage du jeu
+     *  Conseille au joueur de se mettre en plein écran
+     */
     public static void intro () {
         
         System.out.println("Veuillez passer votre invite de commande en plein ecran pour une meilleur experience de jeu");
         System.out.println("");
         System.out.println("Appuyez sur espace puis entree pour commencer");
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in); //attend que le joueur appuit sur une touche pour commencer
 		String s = sc.nextLine();
 		
-		try{
+	try{ //lit le fichier comptenant le logos du jeu
             InputStream flux=new FileInputStream("LambdAsciiGS.txt"); 
             InputStreamReader lecture=new InputStreamReader(flux);
             BufferedReader buff=new BufferedReader(lecture);
@@ -39,48 +44,46 @@ public class LambdaRpg{
     
     public static void main(String[] args){
         
-        
+        //appelle de l'écran d'intro du jeu
         intro();
-        //debut de la partie
         
-        Scanner sc = new Scanner(System.in);
-        Personnage j1=null;
-        Personnage j2=null;
+        
+        Scanner sc = new Scanner(System.in); 
+        Personnage j1=null; //création d'un ojet nul de type personnage pour le joueur 1  
+        Personnage j2=null;  //création d'un ojet nul de type personnage pour le joueur 2
         
         //initialisation joueur 1
        
         System.out.println("Joueur 1 choisis ta classe:");
         System.out.println("1-Mage      2-Guerrier    3-Assassin    4-Necromancien");
         
-        boolean saisie1 = false;
-        boolean saisie2 = false;
-        int personageJ1 = 0;
+        boolean saisie1 = false; //variable utilisée pour s'assurer que le joueur entre un choix de classe valide
+        boolean saisie2 = false; //variable utilisée pour s'assurer que le joueur entre un choix de personnage valide
         
         while(saisie1 == false){ //attend une entrée valide pour le choix de la classe
-            int classeJ1 = sc.nextInt();
-            
-            if(classeJ1 == 1  ){
-                saisie1 =true;
+            int classeJ1 = sc.nextInt(); // stocke le numéro correspondant à la classe chosie par J1
+        
+            if(classeJ1 == 1  ){ //Si le joueur 1 chosi un mage
+                saisie1 =true; // choix de classe valide
                 System.out.println("Ton mage:");
                 System.out.println("1-Melchior      2-Gaspard    3-Balthazar   4-Pikachu");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
-                    
-                    personageJ1 = sc.nextInt();
+                     int personageJ1 = sc.nextInt(); // stocke le numéro correspondant à au personnage chosie par J1
                     if(personageJ1 == 1  ){
                         saisie2 = true;
-                        j1 = new Melchior();
+                        j1 = new Melchior();  //l'ojet J1 correspond à Melchior
                     }else if(personageJ1 == 2  ){
-                        saisie2 = true;
-                        j1 = new Gaspard();
+                        saisie2 = true;  
+                        j1 = new Gaspard(); //l'ojet J1 correspond à Gaspard
                     }else if(personageJ1 == 3  ){
-                        saisie2 = true;
-                        j1 = new Balthazar();    
+                        saisie2 = true;  
+                        j1 = new Balthazar();   //l'ojet J1 correspond à Balthazar    
                     }else if(personageJ1 == 4  ){
-                        saisie2 = true;
-                        j1 = new Pikachu(); 
+                        saisie2 = true;  
+                        j1 = new Pikachu();  //l'ojet J1 correspond à Pikachu
                     }else{
-                        saisie2 = false;
+                        saisie2 = false;  //entrée est invalide le jouer doix rechoisir un personnage
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
