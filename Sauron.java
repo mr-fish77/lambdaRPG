@@ -53,8 +53,10 @@ public class Sauron extends Necromancien{
         
         if( this.mana >= 50){
             
-            this.defense = this.defense*2;
-            System.out.println(this.nom + " Persephone ouvre la porte des enfers !!" +this.nom + " perd 10% de vie mais " +J2.nom+ " en perd 30%");
+            this.defense = (int)(this.defense*1,2);
+            this.vitesse = (int)(this.vitesse*1,2);
+            this.force = (int)(this.force*1,2);
+            System.out.println(this.nom + " augmente sa defense, sa vitesse et sa force de 20%");
             this.mana  = this.mana - 50;
             att =true;
         }else{
