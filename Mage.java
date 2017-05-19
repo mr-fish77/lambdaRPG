@@ -58,13 +58,33 @@ public class Mage extends Personnage{
         
     }
     
-    
-
         
+     /**
+    *Cette methode decrit une attaque commune aux mages
+    *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
+    */
+    public boolean laMainDeMidas(){
         
+        boolean att = false;
+        
+        if( this.mana >= 40){ //condition de mana
+        
+            int diminution =  (int) this.vitesse * 10/100; //calcul la diminution de vitesse
+            this.vitesse = this.vitesse - diminution; //calcul la nouvelle vitesse
+            int augmentation =  (int) this.defense * 20/100; //calcul l'augmentation de defense
+            this.defense = this.defense + augmentation;  //calcul la nouvelle de defense
+            System.out.println(this.nom + " change sa cape en armure d'or. Defense +20%. Vitesse -10%" );
+            this.mana -= 40; //cout en mana de l'attaque
+            att = true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false; //renvoie au choix de l'attaque
+        }
+        
+        return att;
 
-
-
+    }
 
 
 }
