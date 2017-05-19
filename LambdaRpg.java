@@ -47,6 +47,7 @@ public class LambdaRpg{
         System.out.println("Appuyez sur espace puis entree pour commencer");
 		Scanner sc = new Scanner(System.in); //attend que le joueur appuit sur une touche pour commencer
 		String s = sc.nextLine();
+	    	effaceEcran(),
 		
 	try{ //lit le fichier comptenant le logos du jeu
             InputStream flux=new FileInputStream("LambdAsciiGS.txt"); 
@@ -341,7 +342,8 @@ public class LambdaRpg{
         j1.mana += j1.recuperation;
         j2.mana += j2.recuperation;
 		
-		effaceEcran();
+	jouerSuite();
+	effaceEcran();
         
         j1.statComplete();
         j2.statComplete();
