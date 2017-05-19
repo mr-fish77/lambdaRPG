@@ -15,11 +15,21 @@ import java.io.*; //importe l'ensemble du package java.io
 
 
 public class LambdaRpg{
+	
+	/*
+	 * Permet d'ajouter un labs de temps entre 2 executions
+	*/
+	public static void jouerSuite (){
+		long t1 = System.currentTimeMillis(); //Recupere l'heure du systeme
+		int i = 0;
+		for(; i < 2000000000;i++) //boucle contenant un grand nombre de repetitions
+		if((System.currentTimeMillis() - t1) > 3000) break; //Compare l'heure actuelle avec l'heure enregistree, lorsque la difference de temps est attente la boucle est cassee
+		}
       /*
       *  Permet d'éfface l'invitée de commande sous Linux
       */
      public static void effaceEcran () {   
-		for(int i=0; i<50;i++) System.out.println();
+		for(int i=0; i<100;i++) System.out.println();
 		String ESC = "\033[";
 		System.out.print(ESC+"0;0H");
 		System.out.print(ESC+"0;0H");
@@ -62,6 +72,10 @@ public class LambdaRpg{
         
         //appelle de l'écran d'intro du jeu
         intro();
+	//Ajoute un l'abs de temps en l'intro et le jeux
+        jouerSuite();
+        //efface l'ecran pour demarrer le jeux
+        effaceEcran();
         
         
         Scanner sc = new Scanner(System.in); 
