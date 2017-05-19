@@ -1,9 +1,11 @@
 /*
 * <h1>Lambda RPG</h1>
 * Jeu réalisé dans le cadre des projets d'informatique en première année à l'INSA de Lyon
-* <p>
-*
-* @author  Vladimir Muhlstein, Adiren Stricher, Igor Falk, Mathieu Rocfort.
+* Le jeu est un tour pas tour dans lequel deux joueurs s'affrontent sur le meme terminal
+* Les joueurs commencent par choisir leur classe puis leur personnage parmis ceux disponiblent
+* Une fois les joeurs prêts, ils choisissent chacun leur tour leurs attaques, celle-ci ont différentes caractéristiques ce qui permet d'ajouter de la stratégie
+* Evidemment, lorsque les HP d'un des deux joueurs tombent à zéro, le jeu s'arrête et l'autre joueur est déclarer vainqueur
+* @author  Vladimir Muhlstein, Adrien Stricher, Igor Falk, Mathieu Rocfort.
 */
 
 
