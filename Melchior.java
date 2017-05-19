@@ -62,31 +62,6 @@ public class Melchior extends Mage{
         return att;
     }
     
-    public boolean laMainDeMidas(){
-        
-        boolean att = false;
-        
-        if( this.mana >= 40){
-            int diminution =  (int) this.vitesse * 10/100;
-            this.vitesse = this.vitesse - diminution;
-            int augmentation =  (int) this.defense * 20/100;
-            this.defense = this.defense + augmentation;  
-            System.out.println(this.nom + " change sa cape en armure d'or. Defense +20%. Vitesse -10%" );
-            this.mana -=40;
-            att = true;
-        }else{
-            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
-            System.out.println("Rechoisi ton attaque !! ");
-        }
-        
-        return att;
-
-    }
-        
-        
-        
-        
-    
-    
-    
+  
+     
 }
