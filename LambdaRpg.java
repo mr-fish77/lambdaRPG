@@ -1,11 +1,11 @@
-/*
-* <h1>Lambda RPG</h1>
-* Jeu réalisé dans le cadre des projets d'informatique en première année à l'INSA de Lyon
-* Le jeu est un tour pas tour dans lequel deux joueurs s'affrontent sur le meme terminal
-* Les joueurs commencent par choisir leur classe puis leur personnage parmis ceux disponiblent
-* Une fois les joeurs prêts, ils choisissent chacun leur tour leurs attaques, celle-ci ont différentes caractéristiques ce qui permet d'ajouter de la stratégie
-* Evidemment, lorsque les HP d'un des deux joueurs tombent à zéro, le jeu s'arrête et l'autre joueur est déclarer vainqueur
-* @author  Vladimir Muhlstein, Adrien Stricher, Igor Falk, Mathieu Rocfort.
+/**
+	 <h1>Lambda RPG</h1>
+	* Jeu réalisé dans le cadre des projets d'informatique en première année à l'INSA de Lyon
+	* Le jeu est un tour pas tour dans lequel deux joueurs s'affrontent sur le meme terminal
+	* Les joueurs commencent par choisir leur classe puis leur personnage parmis ceux disponiblent
+	* Une fois les joeurs prêts, ils choisissent chacun leur tour leurs attaques, celle-ci ont différentes caractéristiques ce qui permet d'ajouter de la stratégie
+	* Evidemment, lorsque les HP d'un des deux joueurs tombent à zéro, le jeu s'arrête et l'autre joueur est déclarer vainqueur
+	* @author  Vladimir Muhlstein, Adrien Stricher, Igor Falk, Mathieu Rocfort.
 */
 
 
@@ -18,7 +18,7 @@ import java.io.*; //importe l'ensemble du package java.io
 
 public class LambdaRpg{
 	
-	/*
+	/**
 	 * Permet d'ajouter un labs de temps entre 2 executions
 	*/
 	public static void jouerSuite (){
@@ -27,7 +27,7 @@ public class LambdaRpg{
 		for(; i < 2000000000;i++) //boucle contenant un grand nombre de repetitions
 		if((System.currentTimeMillis() - t1) > 3000) break; //Compare l'heure actuelle avec l'heure enregistree, lorsque la difference de temps est attente la boucle est cassee
 		}
-      /*
+      /**
       *  Permet d'éfface l'invitée de commande sous Linux
       */
      public static void effaceEcran () {   
@@ -38,7 +38,7 @@ public class LambdaRpg{
 		System.out.flush();
 	
 	}
-    /*
+    /**
      *  Permet d'afficher l'écran de démarage du jeu
      *  Conseille au joueur de se mettre en plein écran
      */
@@ -68,7 +68,7 @@ public class LambdaRpg{
      
    /**
    * Méthode principale du jeu
-   * @param args inutilisé.
+   * @param args inutilise.
    */
     
     public static void main(String[] args){
@@ -116,87 +116,77 @@ public class LambdaRpg{
                         saisie2 = true;  
                         j1 = new Pikachu();  //l'ojet J1 correspond à Pikachu
                     }else{
-                        saisie2 = false;  //entrée est invalide le jouer doix rechoisir un personnage
+                        saisie2 = false;  //entrée est invalide le joueur doix rechoisir un personnage
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
                     
-                    
-               
-            }else if(classeJ1 == 2  ){
-                
-                saisie1 = true;
+            }else if(classeJ1 == 2  ){ //le joueur 1 a chosit un guerrier
+                saisie1 = true;  // choix de classe valide
                 System.out.println("Choisis ton guerrier:");
                 System.out.println("1-Kim jong un     2-Achille     3-Spartacus");
                                 
-                while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
-                    
-                    personageJ1 = sc.nextInt();
-                    
+                while(saisie2 == false){ //attend une entrée valide pour le choix du personnag
+                    personageJ1 = sc.nextInt(); // stocke le numéro correspondant a au personnage chosie par J1
                     if(personageJ1 == 1  ){
-                        saisie2 = true;
-                        j1 = new Kimjongun();
+                        saisie2 = true;  //entree valide
+                        j1 = new Kimjongun(); //l'ojet J1 correspond au guerrier Kimjongun
                     }else if(personageJ1 == 2  ){
-                        saisie2 = true;
-                        j1 = new Achille();
+                        saisie2 = true;  //entree valide
+                        j1 = new Achille();  //l'ojet J1 correspond au guerrier Achille
                     }else if(personageJ1 == 3  ){
-                        saisie2 = true;
-                        j1 = new Spartacus();
+                        saisie2 = true;  //entree valide
+                        j1 = new Spartacus();  //l'ojet J1 correspond au guerrier Spartacus
                     }else{
-                        saisie2 = false;
+                        saisie2 = false;  //entree est invalide le joueur doix rechoisir un personnage
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
-            }else if(classeJ1 == 3  ){
-                
-                saisie1 = true;
+            }else if(classeJ1 == 3  ){ //le joueur 1 a chosit un Assasin
+                saisie1 = true; // choix de classe valide
                 System.out.println("Choisis ton Assasin:");
                 System.out.println("1-Jack l'Eventreur   2-Omar m'a tuer   3-Ezio Auditore da Firenze");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
-                    
-                    personageJ1 = sc.nextInt();
-                    
+                    personageJ1 = sc.nextInt();  // stocke le numéro correspondant au personnage chosie par J1
                     if(personageJ1 == 1  ){
-                        saisie2 = true;
-                        j1 = new Jackeventreur();
+                        saisie2 = true; //entree valide
+                        j1 = new Jackeventreur(); //l'ojet J1 correspond à l'Assasin Jackeventreur
                     }else if(personageJ1 == 2  ){
-                        saisie2 = true;
-                        j1 = new Omar();
+                        saisie2 = true;//entree valide
+                        j1 = new Omar();  //l'ojet J1 correspond à l'Assasin Omar
                      }else if(personageJ1 == 3  ){
-                        saisie2 = true;
-                        j1 = new Ezio();
-                    }else{
-                        saisie2 = false;
+                        saisie2 = true; //entree valide
+                        j1 = new Ezio(); //l'ojet J1 correspond à l'Assasin Ezio
+                    }else{ 
+                        saisie2 = false;  //entree est invalide le joueur doix rechoisir un personnage
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
-            }else if(classeJ1 == 4  ){
-                
+            }else if(classeJ1 == 4  ){ //le joueur 1 a chosit un Necromancien
                 saisie1 = true;
                 System.out.println("Choisis ton Necromancien");
                 System.out.println("1-Isis      2-Hades   3-Sauron");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
                     
-                    personageJ1 = sc.nextInt();
-                    
+                    personageJ1 = sc.nextInt(); // stocke le numéro correspondant au personnage chosie par J1
                     if(personageJ1 == 1  ){
-                        saisie2 = true;
-                        j1 = new Isis();
+                        saisie2 = true; //entree valide
+                        j1 = new Isis(); //l'ojet J1 correspond au Necromancien Isis
                     }else if(personageJ1 == 2  ){
-                        saisie2 = true;
-                        j1 = new Hades();
+                        saisie2 = true; //entree valide
+                        j1 = new Hades(); //l'ojet J1 correspond au Necromancien Hades
                     }else if(personageJ1 == 3  ){
-                        saisie2 = true;
-                        j1 = new Sauron();
+                        saisie2 = true; //entree valide
+                        j1 = new Sauron(); //l'ojet J1 correspond au Necromancien Sauron
                     }else{
-                        saisie2 = false;
+                        saisie2 = false;  //entree est invalide le joueur doix rechoisir un personnage
                         System.out.println("Choix saisi incorrect. Rechoisi ton personnage !");
                     }
                 }
             }else{
-                saisie1 = false;
+                saisie1 = false; //entree est invalide le jouer doix rechoisir une classe
                 System.out.println("Choix saisi incorrect. Rechoisi ta classe !!");
                 
             }
@@ -212,7 +202,7 @@ public class LambdaRpg{
         boolean saisie4 = false;
         int personageJ2 = 0;
         
-        while(saisie3 == false){ //attend une entrée valide pour le choix de la classe
+        while(saisie3 == false){
             int classeJ2 = sc.nextInt();
             
             if(classeJ2 == 1  ){
@@ -220,7 +210,7 @@ public class LambdaRpg{
                 System.out.println("Choisis ton mage:");
                 System.out.println("1-Melchior      2-Gaspard   3-Balthazar  4-Pikachu");
                                 
-                while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
+                while(saisie4 == false){ 
                     
                     personageJ2 = sc.nextInt();
                     if(personageJ2 == 1  ){
@@ -249,7 +239,7 @@ public class LambdaRpg{
                 System.out.println("Choisis ton guerrier:");
                 System.out.println("1-Kim jong un   2-Achille   3-Spartacus");
                                 
-                while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
+                while(saisie4 == false){ 
                     
                     personageJ2 = sc.nextInt();
                     
@@ -274,7 +264,7 @@ public class LambdaRpg{
                 System.out.println("Choisis ton Assasin:");
                 System.out.println("1-Jack l'Eventreur   2-Omar m'a tuer   3-Ezio Auditore da Firenze");
                                 
-                while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
+                while(saisie4 == false){ 
                     
                     personageJ2 = sc.nextInt();
                     
@@ -298,7 +288,7 @@ public class LambdaRpg{
                 System.out.println("Choisis ton Necromancien");
                 System.out.println("1-Isis     2-Hades       3-Sauron");
                                 
-                while(saisie4 == false){ //attend une entrée valide pour le choix du personnage
+                while(saisie4 == false){ 
                     
                     personageJ2 = sc.nextInt();
                     
@@ -324,36 +314,37 @@ public class LambdaRpg{
         effaceEcran();
         }
         
-        //récap des choix
+        //récap des choix effectué par les duex joueur
         
         j1.statComplete();
         j2.statComplete();
         
+        //début du combat
+	    
+    while( (j1.vie > 0) && (j2.vie > 0) ){ //Le combat dure jusqu'à ce qu'un personnage n'ai plus de vie
         
-    while( (j1.vie > 0) && (j2.vie > 0) ){
+        for(int i=0;i<5;i++)System.out.println(""); //saut de ligne
         
-        for(int i=0;i<5;i++)System.out.println("");
+        j1.attaquer(j2); // le J1 attaque J2
         
-        j1.attaquer(j2);
-        
-        if(j2.vie > 0){
+        if(j2.vie > 0){ //Si J2 à encore de la vie il attaque J1
             System.out.println("");
-            j2.attaquer(j1);
+            j2.attaquer(j1); // le J2 attaque J1
         }
         
-        j1.mana += j1.recuperation;
+        j1.mana += j1.recuperation; //les personnage régénèrent leur mana.
         j2.mana += j2.recuperation;
 		
-	jouerSuite();
+	jouerSuite(); //pause
 	effaceEcran();
         
-        j1.statComplete();
+        j1.statComplete();//affiche les stats des personnages
         j2.statComplete();
         
     }
     
     System.out.println("");
-    
+    //affiche le vainqueur 
     if(j2.vie >= 0){
             System.out.println(j2.nom + " a vaincu " + j1.nom);
     }else if(j1.vie >= 0){
