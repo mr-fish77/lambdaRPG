@@ -92,14 +92,14 @@ public class LambdaRpg{
         
         while(saisie1 == false){ //attend une entrée valide pour le choix de la classe
             int classeJ1 = sc.nextInt(); // stocke le numéro correspondant à la classe chosie par J1
-        
+            int personageJ1 =0;
             if(classeJ1 == 1  ){ //le joueur 1 a chosit un mage
                 saisie1 =true; // choix de classe valide
                 System.out.println("Ton mage:");
                 System.out.println("1-Melchior      2-Gaspard    3-Balthazar   4-Pikachu");
                                 
                 while(saisie2 == false){ //attend une entrée valide pour le choix du personnage
-                     int personageJ1 = sc.nextInt(); // stocke le numéro correspondant à au personnage chosie par J1
+                    personageJ1 = sc.nextInt(); // stocke le numéro correspondant à au personnage chosie par J1
                     if(personageJ1 == 1  ){
                         saisie2 = true;
                         j1 = new Melchior();  //l'ojet J1 correspond à Melchior
