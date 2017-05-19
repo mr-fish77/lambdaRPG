@@ -23,7 +23,7 @@ public class Jackeventreur extends Assassin{
             J2.vie = J2.vie - 50; //inflige les dégats de l'attaque
             System.out.println(J2.nom + " est empoisonne, il subit 50 degats !! ");
             System.out.println("");
-            poison --; //décrémente le nombre de tour d'empoisonnement
+            poison --; //decremente le nombre de tour d'empoisonnement
         }
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
