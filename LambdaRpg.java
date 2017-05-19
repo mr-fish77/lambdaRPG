@@ -1,3 +1,15 @@
+/*
+* <h1>Lambda RPG</h1>
+* Jeu réalisé dans le cadre des projets d'informatique en première année à l'INSA de Lyon
+* <p>
+*
+* @author  Vladimir Muhlstein, Adiren Stricher, Igor Falk, Mathieu Rocfort.
+*/
+
+
+
+
+
 import java.util.Scanner; // importe la classe Scanner du package java.util
 import java.io.*; //importe l'ensemble du package java.io
 
@@ -40,7 +52,11 @@ public class LambdaRpg{
             System.out.println(e.toString());
         }
 	}
-    
+     
+   /**
+   * Méthode principale du jeu
+   * @param args inutilisé.
+   */
     
     public static void main(String[] args){
         
