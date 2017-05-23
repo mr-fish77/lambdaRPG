@@ -314,7 +314,7 @@ public class LambdaRpg{
         effaceEcran();
         }
         
-        //récap des choix effectué par les duex joueur
+        //récap des choix effectué par les deu joueurs
         
         j1.statComplete();
         j2.statComplete();
@@ -323,7 +323,7 @@ public class LambdaRpg{
 	    
     while( (j1.vie > 0) && (j2.vie > 0) ){ //Le combat dure jusqu'à ce qu'un personnage n'ai plus de vie
         
-        for(int i=0;i<5;i++)System.out.println(""); //saut de ligne
+        for(int i=0;i<5;i++)System.out.println(""); //saut de lignes
         
         j1.attaquer(j2); // le J1 attaque J2
         
@@ -336,7 +336,7 @@ public class LambdaRpg{
         j2.mana += j2.recuperation;
 		
 	jouerSuite(); //pause
-	effaceEcran();
+	effaceEcran();//mise à jour de l'écran
         
         j1.statComplete();//affiche les stats des personnages
         j2.statComplete();
@@ -349,7 +349,7 @@ public class LambdaRpg{
             System.out.println(j2.nom + " a vaincu " + j1.nom);
     }else if(j1.vie >= 0){
             System.out.println(j1.nom + " a vaincu " + j2.nom);
-    }else{
+    }else{ //si jamais ça plante 
             System.out.println("il y a un problem quelque part....");
     }
      
