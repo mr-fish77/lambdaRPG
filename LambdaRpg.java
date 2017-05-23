@@ -27,9 +27,9 @@ public class LambdaRpg{
 		for(; i < 2000000000;i++) //boucle contenant un grand nombre de repetitions
 		if((System.currentTimeMillis() - t1) > 3000) break; //Compare l'heure actuelle avec l'heure enregistree, lorsque la difference de temps est attente la boucle est cassee
 		}
-      /**
-      *  Permet d'éfface l'invitée de commande sous Linux
-      */
+	/**
+	*  Permet d'éfface l'invitée de commande sous Linux
+	*/
      public static void effaceEcran () {   
 		for(int i=0; i<100;i++) System.out.println();
 		String ESC = "\033[";
@@ -39,7 +39,7 @@ public class LambdaRpg{
 	
 	}
     /**
-     *  Permet d'afficher l'écran de démarage du jeu
+     *  Permet d'afficher l'ecran de demarage du jeu
      *  Conseille au joueur de se mettre en plein écran
      */
     public static void intro () {
@@ -53,8 +53,8 @@ public class LambdaRpg{
 		
 	try{ //lit le fichier comptenant le logos du jeu
             InputStream flux=new FileInputStream("LambdAsciiGS.txt"); 
-            InputStreamReader lecture=new InputStreamReader(flux);
-            BufferedReader buff=new BufferedReader(lecture);
+            InputStreamReader lecture = new InputStreamReader(flux);
+            BufferedReader buff = new BufferedReader(lecture);
             String ligne;
             while ((ligne=buff.readLine())!=null){
                 System.out.println(ligne);
@@ -67,7 +67,7 @@ public class LambdaRpg{
 	}
      
    /**
-   * Méthode principale du jeu
+   * Methode principale du jeu
    * @param args inutilise.
    */
     
@@ -314,7 +314,7 @@ public class LambdaRpg{
         effaceEcran();
         }
         
-        //récap des choix effectué par les duex joueur
+        //récap des choix effectués par les deux joueurs
         
         j1.statComplete();
         j2.statComplete();
@@ -323,20 +323,20 @@ public class LambdaRpg{
 	    
     while( (j1.vie > 0) && (j2.vie > 0) ){ //Le combat dure jusqu'à ce qu'un personnage n'ai plus de vie
         
-        for(int i=0;i<5;i++)System.out.println(""); //saut de ligne
+        for(int i=0;i<5;i++)System.out.println(""); //saut de lignes
         
         j1.attaquer(j2); // le J1 attaque J2
         
         if(j2.vie > 0){ //Si J2 à encore de la vie il attaque J1
             System.out.println("");
-            j2.attaquer(j1); // le J2 attaque J1
+            j2.attaquer(j1); // J2 attaque J1
         }
         
         j1.mana += j1.recuperation; //les personnage régénèrent leur mana.
         j2.mana += j2.recuperation;
 		
 	jouerSuite(); //pause
-	effaceEcran();
+	effaceEcran();//mise à jour de l'affichage
         
         j1.statComplete();//affiche les stats des personnages
         j2.statComplete();
@@ -349,7 +349,7 @@ public class LambdaRpg{
             System.out.println(j2.nom + " a vaincu " + j1.nom);
     }else if(j1.vie >= 0){
             System.out.println(j1.nom + " a vaincu " + j2.nom);
-    }else{
+    }else{//si jamais ça plante 
             System.out.println("il y a un problem quelque part....");
     }
      
