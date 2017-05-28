@@ -4,7 +4,7 @@ public class Achille extends Guerrier{
 
     public Achille(){
         
-        super("Achille", 250, 100 , 350, 230, 110, 0, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Achille", 708,100,559,379,199,219,20,259,0,0,0,0); //nom, vie, mana, defense, force, vitesse, magie, recupération, resistance magique, poison, brulure, sommeil
     }
       /** 
      *La methode attaquer permet au joueur de selectionner son attaque.
@@ -14,8 +14,15 @@ public class Achille extends Guerrier{
         Scanner sc = new Scanner(System.in);
         boolean attok = false;
         
-        System.out.println(this.nom + " Attaque. Choisi ton attaque :"); 
-        System.out.println("1-Talonnette     2-Boularmure     3-Tibo Yinshape    4- Pichenette   5-This is sparta   6-Passer son tour" );
+         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1- : attaque puissante avec 10% de chance de baisser def spe");  
+        System.out.println("2-");
+        System.out.println("3-");
+        System.out.println("4-");
+        System.out.println("5-");
+        System.out.println("6-");
+        System.out.println("7-");
+        System.out.println("8-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/

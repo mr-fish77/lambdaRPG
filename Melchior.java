@@ -3,7 +3,7 @@ public class Melchior extends Mage{
 
     public Melchior(){
         
-        super("Melchior", 500, 100 , 50, 100, 200, 400, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Melchior", 688, 100, 289, 209, 229, 317, 20, 319, 0, 0, 0, 0); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
       /** 
      *La methode attaquer permet au joueur de selectionner son attaque.
@@ -14,8 +14,15 @@ public class Melchior extends Mage{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-Or       2-La Main De Midas     3-Yami no mahO    4- Flammeche    5-Passer son tour" );
+         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1-");  
+        System.out.println("2-");
+        System.out.println("3-");
+        System.out.println("4-");
+        System.out.println("5-");
+        System.out.println("6-");
+        System.out.println("7-");
+        System.out.println("8-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
@@ -23,24 +30,36 @@ public class Melchior extends Mage{
             
             switch (choixAttaque){
                 case 1:
-                    attok = or();
+                    attok = attaque1(J2);
                 break;
                 case 2:
-                    attok = laMainDeMidas();
+                    attok = attaque2(J2);
                 break;
                 case 3:
-                    attok = attaqueRapide(J2);
+                    attok = attaque3(J2);
                 break;
                 case 4:
-                    attok = attaqueMagiePuissante(J2);
+                    attok = attaque4();
                 break;
                 case 5:
+                    attok = attaque5(J2);
+                break;
+                case 6:
+                    attok = attaque6(J2);
+                break;
+                case 7:
+                    attok = attaque7(J2);
+                break;
+                case 8:
+                    attok = attaque8(J2);
+                break;
+                case 9:
                     System.out.println(this.nom +  " passe son tour !");
                     attok = true;
                 break;
                 default:
                     attok = false;
-                    System.out.println("attaque saisie incorrect. Rechoisi ton attaque !! ");
+                    System.out.println("attaque saisie incorrecte. Rechoisi ton attaque !! ");
                 break;
             }
         }
@@ -52,24 +71,115 @@ public class Melchior extends Mage{
     *Cette methode decrit l'attaque speciale du personnage. 
     *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
     */
-    public boolean or(){
-        boolean att = false;
+    public boolean attaque5(Personnage J2){
+         boolean att = false;
         
-        if( this.mana >= 50){ //condtion de mana
-            this.magie += 50; //augmente la magie du personnage
-            System.out.println(this.nom + " utilise une amulette qui augmente sa magie de 50 " );
-            this.mana -=50; //cout en mana
-            att = true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
+        if( this.mana >= 80){
+			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+			if(esquive>30){
+			int aleat = (int)(Math.random()*10+90); // coefficient valeur attaque
+            int degat = (int)(aleat*(42*this.magie*150)/(50*J2.resistanceMagique));
+				if(degat >= 0){
+                J2.vie -= degat;
+                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+				
+		
+				}else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
+				}
+		}else{
+			System.out.println(J2.nom +" esquive l'attaque");
+		}
+            this.mana  -= 80;
+            att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            
+            att = false;
         }
 
         
         return att;
     }
     
-  
+     public boolean attaque6(Personnage J2){ //degats
+        
+        boolean att = false;
+        if( this.mana >= 40){
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.force*30)/(50*J2.defensePhysique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et le paralyse");
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est paralyse");
+            }
+            this.mana  -= 40;
+            J2.paralysie=4;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+        
+    }
+    
+    public boolean attaque7(Personnage J2){
+		
+        boolean att = false;
+        if( this.mana >= 40){
+			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+			if(esquive>40){
+            J2.dodo=3;
+            }else{
+			System.out.println(J2.nom +" esquive l'attaque");
+			}
+            this.mana -=40;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+    }
+    
+   public boolean attaque8(Personnage J2){
+         boolean att = false;
+        
+        if( this.mana >= 60){
+			int aleat = (int)(Math.random()*10+90); // coefficient valeur attaque
+            int degat = (int)(aleat*(42*this.magie*100)/(50*J2.resistanceMagique));
+				if(degat >= 0){
+					if (J2.dodo>0){
+                J2.vie -= 2*degat;
+                J2.dodo=0;
+                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom+" et le reveil" );
+			}else{
+				J2.vie -= degat;
+			}
+				
+		
+				}else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
+				}
+        
+            this.mana  -= 60;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+    }
      
 }

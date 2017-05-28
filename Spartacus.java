@@ -4,7 +4,7 @@ public class Spartacus extends Guerrier{
 
     public Spartacus(){
         
-        super("Spartacus", 300, 100 , 300, 200, 100, 0, 20); //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Spartacus", 728,100,359,339,189,209,20,229,0,0,0,0); //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
     
      public void attaquer(Personnage J2){
@@ -12,8 +12,15 @@ public class Spartacus extends Guerrier{
         Scanner sc = new Scanner(System.in);
         boolean attok = false;
         
-        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-3e guerre civile     2-Boularmure     3-Tibo Yinshape    4- Pichenette   5-This is sparta   6-Passer son tour" );
+         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1-");  
+        System.out.println("2-");
+        System.out.println("3-");
+        System.out.println("4-");
+        System.out.println("5-");
+        System.out.println("6-");
+        System.out.println("7-");
+        System.out.println("8-Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
@@ -52,7 +59,7 @@ public class Spartacus extends Guerrier{
         
         if( this.mana >= 50){
             
-             int degat = this.vitesse/10 + this.force/2 -J2.defense/5;
+             int degat = this.vitesse/10 + this.force/2 ;
             J2.vie = J2.vie - degat;
             System.out.println("Les esclaves se libèrent et vont attaquer " + J2.nom + " Il fait " + degat + " a "+ J2.nom);
             

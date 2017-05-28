@@ -4,7 +4,7 @@ public class Hades extends Necromancien{
     
     public Hades(){
         
-        super("Hades", 600, 100 , 50, 90, 180, 450, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Hades", 1000,100,259,269,219,269,20,289,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération
     }
           /** 
      *La methode attaquer permet au joueur de selectionner son attaque.
@@ -17,30 +17,46 @@ public class Hades extends Necromancien{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-Persephone Gate   2-Malediction    3-Lance de macchabes   4- Caresse de la mort   5-Noces funebres     6-Passer son tour" );
+         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1-");  
+        System.out.println("2-");
+        System.out.println("3-");
+        System.out.println("4-");
+        System.out.println("5-");
+        System.out.println("6-");
+        System.out.println("7-");
+        System.out.println("8-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
             int choixAttaque = sc.nextInt();
             
-            switch (choixAttaque){
+                        switch (choixAttaque){
                 case 1:
-                    attok = persephone(J2);
+                    attok = attaque1(J2);
                 break;
                 case 2:
-                    attok = malediction(J2);
+                    attok = attaque2(J2);
                 break;
                 case 3:
-                    attok = attaquePuissante(J2);
+                    attok = attaque3(J2);
                 break;
                 case 4:
-                    attok = attaqueRapide(J2);
+                    attok = attaque4();
                 break;
                 case 5:
-                    attok = attaqueMagiePuissante(J2);
+                    attok = attaque5(J2);
                 break;
                 case 6:
+                    attok = attaque6(J2);
+                break;
+                case 7:
+                    attok = attaque7(J2);
+                break;
+                case 8:
+                    attok = attaque8();
+                break;
+                case 9:
                     System.out.println(this.nom +  " passe son tour !");
                     attok = true;
                 break;
@@ -63,7 +79,7 @@ public class Hades extends Necromancien{
         if( this.mana >= 50){ //condition de mana
             this.vie =(int) (this.vie* 0.9); //Enleve 10% de sa propre vie  
             J2.vie = (int)(J2.vie* 0.7); //Enleve 30% de la vie de J2
-            this.defense = this.defense*1.2; //Augmente de 20% sa propre défense
+            this.defensePhysique = (int) (this.defensePhysique*1.2); //Augmente de 20% sa propre défense
             System.out.println(this.nom + " Persephone ouvre la porte des enfers !! " +this.nom + " perd 10% de vie mais " +J2.nom+ " en pert 30%");
             this.mana  = this.mana - 50; //cout en mana de l'attaque
             att =true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque

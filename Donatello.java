@@ -1,22 +1,24 @@
 import java.util.Scanner;
 
-public class Isis extends Necromancien{
+public class Donatello extends Assassin{
     
-    public Isis(){
+    
+    public Donatello(){
         
-        super("Isis", 990,100,223,293,235,299,20,261,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Donatello",80,100,229,383,284,229,20,329,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        
     }
-          /** 
+     /** 
      *La methode attaquer permet au joueur de selectionner son attaque.
      *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
      */
      public void attaquer(Personnage J2){
         
-        
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
+       
 
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
         System.out.println("1-");  
         System.out.println("2-");
         System.out.println("3-");
@@ -26,7 +28,7 @@ public class Isis extends Necromancien{
         System.out.println("7-");
         System.out.println("8-Passer son tour" );
         
-        while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
+        while(attok == false){/**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
             int choixAttaque = sc.nextInt();
             
@@ -72,15 +74,15 @@ public class Isis extends Necromancien{
     *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
     *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
     */
-    public boolean sacrifice(Personnage J2){
+    public boolean lamesecrete(Personnage J2){
         boolean att = false;
         
-        if( this.mana >= 50){ //condition de mana
+        if( this.mana >= 50){  //condition de mana
             
             int degat = 250;
-            J2.vie = J2.vie - degat; //inflige les dégats de l'attaque
-            System.out.println(this.nom + " 72 vierges debarquent des enfers pour attaquer l'adversaire " +J2.nom+ " subit 250 de degats");
-            this.mana  = this.mana - 50; //cout en mana de l'attaque 
+            J2.vie = J2.vie - degat; //inflige les degats à J2
+            System.out.println(this.nom + " attaque avec des lames cachees dans ses gantelets situes sur ses avant-bras. Il fait " + degat + " degats a " + J2.nom);
+            this.mana  = this.mana - 50; //cout en mana de l'attaque
             att =true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -91,5 +93,6 @@ public class Isis extends Necromancien{
         return att;
         
     }
+
     
 }

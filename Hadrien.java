@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class Kimjongun extends Guerrier{
+public class Hadrien extends Guerrier{
 
-    public Kimjongun(){
+    public Hadrien(){
         
-        super("Kim jong un", 868,100,359,379,179,209,20,209,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Hadrien le Hun",688,100,559,379,199,219,20,259,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération
 
     }
      /** 
@@ -16,7 +16,7 @@ public class Kimjongun extends Guerrier{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
 
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
         System.out.println("1-");  
         System.out.println("2-");
         System.out.println("3-");
