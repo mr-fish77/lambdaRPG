@@ -1,27 +1,37 @@
 public class Mage extends Personnage{
     
     
-    public Mage(String n, int v, int MP, int d, int f, int s, int m, int r){
+    public Mage(String n, int v, int MP, int d, int f, int s, int m, int r,int RM, int poi, int br, int dd, int pr){
         
-        super( n,  v,  MP,  d,  f,  s,  m, r);
+        super( n,  v,  MP,  d,  f,  s,  m, r, RM, poi, br, dd, pr);
     }
     
    
     
-    public boolean attaqueMagiePuissante(Personnage J2){
+    public boolean attaque1(Personnage J2){ // degats + baisse def spe
         
         boolean att = false;
         
-        if( this.mana >= 40){
-            int degat = this.vitesse/10 + this.magie/2 - J2.defense/5;
-            if(degat >= 0){
+        if( this.mana >= 50){
+			
+			int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.magie*90)/(50*J2.resistanceMagique*100));
+				if(degat >= 0){
                 J2.vie -= degat;
                 System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
-            }else{
+				int baisse = (int)(Math.random()*100);
+					if (baisse<=10) {
+					J2.resistanceMagique = (int)(J2.resistanceMagique*0.9);
+					System.out.println(J2.nom+" a pris peur lors de l'attaque et voit sa defense speciale diminuer de 10%");
+					}
+		
+				}else{
                 System.out.println("l'attaque est sans effet. L'ennemie e trop de defense !!");
-            }
+				}
         
-            this.mana  = this.mana - 40;
+            
+		
+		this.mana  -= 50;
             att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -33,19 +43,50 @@ public class Mage extends Personnage{
         return att;
         
     }
-    
-    public boolean attaqueRapide(Personnage J2){
+
+    public boolean attaque2(Personnage J2){ // degats + brulure
         
         boolean att = false;
-        if( this.mana >= 20){
-            int degat =  this.vitesse/2 + this.force/10 - J2.defense/5;
+        if( this.mana >= 30){
+			int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.magie*50)/(50*J2.resistanceMagique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
+				int brulure = (int)(Math.random()*100);
+					if (brulure<=10) {
+					J2.brulure=3;
+					System.out.println(J2.nom+" a ete brule lors de l'attaque");
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
+            }
+            this.mana  -= 30;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+	}
+
+        
+        return att;
+	
+	}
+    
+    public boolean attaque3(Personnage J2){ //degats
+        
+        boolean att = false;
+        if( this.mana >= 40){
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.force*80)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
                 System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
-            this.mana  = this.mana - 20;
+            this.mana  -= 40;
             att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -58,33 +99,22 @@ public class Mage extends Personnage{
         
     }
     
-        
-     /**
-    *Cette methode decrit une attaque commune aux mages
-    *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
-    */
-    public boolean laMainDeMidas(){
-        
+    public boolean attaque4(){ //Augmentation att spe
+         
         boolean att = false;
-        
-        if( this.mana >= 40){ //condition de mana
-        
-            int diminution =  (int) this.vitesse * 10/100; //calcul la diminution de vitesse
-            this.vitesse = this.vitesse - diminution; //calcul la nouvelle vitesse
-            int augmentation =  (int) this.defense * 20/100; //calcul l'augmentation de defense
-            this.defense = this.defense + augmentation;  //calcul la nouvelle de defense
-            System.out.println(this.nom + " change sa cape en armure d'or. Defense +20%. Vitesse -10%" );
-            this.mana -= 40; //cout en mana de l'attaque
-            att = true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
+        if( this.mana >= 40){
+            this.magie = (int)(this.magie*1.2);
+            this.mana  -= 40;
+            att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            att = false; //renvoie au choix de l'attaque
+            att = false;
         }
+
         
         return att;
-
+        
     }
-
-
 }
+

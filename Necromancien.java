@@ -2,75 +2,33 @@ public class Necromancien extends Personnage{
     
  
     
-    public Necromancien(String n, int v, int MP, int d, int f, int s, int m, int r){
+    public Necromancien(String n, int v, int MP, int d, int f, int s, int m, int r, int RM, int poi, int br, int dd, int pr){
         
-        super( n,  v,  MP,  d,  f,  s,  m, r);
-        
-    }
-    
-    
-    public boolean attaquePuissante(Personnage J2){
-        
-        boolean att = false;
-        
-        if( this.mana >= 30){
-            int degat = this.vitesse/10 + this.force/2 - J2.defense/5;
-            if(degat >= 0){
-                J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
-            }else{
-                System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
-            }
-            this.mana  = this.mana - 30;
-            att =true;
-        }else{
-            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
-            System.out.println("Rechoisi ton attaque !! ");
-            att = false;
-        }
-        
-        return att;
+        super( n,  v,  MP,  d,  f,  s,  m, r, RM, poi, br, dd, pr);
         
     }
     
-    public boolean attaqueRapide(Personnage J2){
+    
+    public boolean attaque4(Personnage J2){
         
         boolean att = false;
-        
-        if( this.mana >= 10){
-            int degat =  this.vitesse/2 + this.force/10 - J2.defense/5;
-            if(degat >= 0){
-                J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
-            }else{
-                System.out.println("l'attaque est sans effet. L'ennemie à trop de defense !!");
-            }
-        this.mana  = this.mana - 10;
-        att =true;
-        }else{
-            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
-            System.out.println("Rechoisi ton attaque !! ");
-            att = false;
-        }
-        
-        return att;
-    }
-    
-    
-    public boolean attaqueMagiePuissante(Personnage J2){
-        
-        boolean att = false;
-        
         if( this.mana >= 40){
-            int degat = this.vitesse/10 + this.magie/2 - J2.defense/5;
+			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+			if(esquive>40){
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)(aleat*(42*this.force*30)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fais une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et l'empoisonne");
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est empoisonne");
             }
-        
-            this.mana  = this.mana - 40;
+            
+            J2.poison=3;
+            }else{
+			System.out.println(J2.nom +" esquive l'attaque");
+			}
+			this.mana  -= 40;
             att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -83,22 +41,105 @@ public class Necromancien extends Personnage{
         
     }
     
-     public boolean malediction(Personnage J2){
-        boolean att = false;
+    public boolean attaque1(Personnage J2){
         
+       boolean att = false;
         if( this.mana >= 40){
+			
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)(aleat*(42*this.magie*30)/(50*J2.resistanceMagique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                int empoi= (int)(Math.random()*100);
+                if (empoi<11){
+					J2.poison=3;
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et l'empoisonne");
+			}else{
+				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+			}
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
+            }
             
-            int degat =  (int) J2.vie * 10/100;
-            J2.vie = J2.vie - degat;
-            this.mana = this.mana + degat;
-            System.out.println(this.nom + " Convertie 10% de la vie de " +J2.nom+ " en mana." +J2.nom+ "subit" + degat);
-            this.mana  = this.mana - 40;
-            att =true;
+            
+			this.mana  -= 40;
+            att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
             att = false;
         }
+
+        
+        return att;
+        
+    }
+    
+    
+    public boolean attaque2(Personnage J2){
+        
+         boolean att = false;
+        if( this.mana >= 50){
+			
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)(aleat*(42*this.magie*80)/(50*J2.resistanceMagique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                int baisse= (int)(Math.random()*100);
+                if (baisse<11){
+					J2.vitesse=(int)(0.9*J2.vitesse);
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et diminue sa resistance magique de 10%");
+			}else{
+				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+			}
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
+            }
+            
+            
+			this.mana  -= 50;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+        
+    }
+
+      
+    
+     public boolean attaque3(Personnage J2){
+        boolean att = false;
+        if( this.mana >= 50){
+			
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)(aleat*(42*this.force*80)/(50*J2.defensePhysique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                int revi= (int)(Math.random()*100);
+                if (revi<11){
+					this.vie +=100;
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et recupere 100 HP");
+			}else{
+				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+			}
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
+            }
+            
+            
+			this.mana  -= 40;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
         
         return att;
         

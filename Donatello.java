@@ -1,41 +1,37 @@
 import java.util.Scanner;
 
-public class Jackeventreur extends Assassin{
+public class Donatello extends Assassin{
     
     
-    public Jackeventreur(){
+    public Donatello(){
         
-        super("Jack l'Eventreur", 668,100,299,383,284,219,20,239,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération, resistance magique, poison, brulure, sommeil, paralysie
-     
+        super("Donatello",680,100,229,383,286,229,20,329,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération, resistance magique, poison, brulure, sommeil, paralysie
+        
     }
-    
      /** 
      *La methode attaquer permet au joueur de selectionner son attaque.
      *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
      */
      public void attaquer(Personnage J2){
         
-         
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
-   
-        
+       
 
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
         System.out.println("1-");  
         System.out.println("2-");
         System.out.println("3-");
         System.out.println("4-");
-        System.out.println("5- Attaque puissante");
-        System.out.println("6- Diminue la vitesse de J2 de 10%");
-        System.out.println("7- Attaque faible mais qui inflige brulure");
-        System.out.println("8- Attaque puissante, J1 recupere la moitie des degats en HP");
+        System.out.println("5- Attaque moderee mais possibilite de recuperer 100 HP");
+        System.out.println("6- Diminue vitesse de J2 de 10%");
+        System.out.println("7- Vous recuperez 100 HP");
+        System.out.println("8- Attaque faible mais qui empoisonne l'ennemi");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){/**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
             int choixAttaque = sc.nextInt();
-            
             
                         switch (choixAttaque){
                 case 1:
@@ -57,7 +53,7 @@ public class Jackeventreur extends Assassin{
                     attok = attaque6(J2);
                 break;
                 case 7:
-                    attok = attaque7(J2);
+                    attok = attaque7();
                 break;
                 case 8:
                     attok = attaque8(J2);
@@ -74,30 +70,32 @@ public class Jackeventreur extends Assassin{
         }
         
     }
-           /**
+        /**
     *Cette methode decrit l'attaque speciale du personnage. 
     *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
     *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
     */
-    public boolean attaque5(Personnage J2){ //attaque puissante
+    public boolean attaque5(Personnage J2){
         boolean att = false;
-        if( this.mana >= 80){
-			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
-			if(esquive>30){
+        if( this.mana >= 50){
+			
             int aleat = (int)(Math.random()*10+90);
-            int degat = (int)((aleat*42*this.force*150)/(50*J2.defensePhysique*100));
+            int degat = (int)(aleat*(42*this.force*80)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                int revi= (int)(Math.random()*100);
+                if (revi<11){
+					this.vie +=100;
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et recupere 100 HP");
+			}else{
+				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+			}
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
             
             
-            }else{
-			System.out.println(J2.nom +" esquive l'attaque");
-			}
-			this.mana  -= 80;
+			this.mana  -= 40;
             att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -110,7 +108,7 @@ public class Jackeventreur extends Assassin{
         
     }
     
-    public boolean attaque6(Personnage J2){ // diminue vitesse de J2 de 10%
+     public boolean attaque6(Personnage J2){ //diminution vitesse J2
         boolean att = false;
         if( this.mana >= 40){
 			
@@ -128,22 +126,42 @@ public class Jackeventreur extends Assassin{
         return att;
         
     }
+
+    public boolean attaque7(){ // regen vie
+        boolean att = false;
+        if( this.mana >= 40){
+			
+           this.vie +=100;
+                System.out.println(this.nom + " recupere 100 PV");
+			this.mana  -= 40;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+        
+    }
     
-    public boolean attaque7(Personnage J2){ //attaque faible + brulure
+    public boolean attaque8(Personnage J2){ //degats + poison
+        
         boolean att = false;
         if( this.mana >= 40){
 			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
-			if(esquive>30){
+			if(esquive>40){
             int aleat = (int)(Math.random()*10+90);
-            int degat = (int)((aleat*42*this.force*40)/(50*J2.defensePhysique*100));
+            int degat = (int)(aleat*(42*this.force*30)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et le brule");
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et l'empoisonne");
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule ");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est empoisonne");
             }
-            J2.brulure=3;
             
+            J2.poison=4;
             }else{
 			System.out.println(J2.nom +" esquive l'attaque");
 			}
@@ -160,35 +178,5 @@ public class Jackeventreur extends Assassin{
         
     }
 
-	public boolean attaque8(Personnage J2){ // attaque puissante + J1 recupere moitie des degats 
-        boolean att = false;
-        if( this.mana >= 60){
-			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
-			if(esquive>20){
-            int aleat = (int)(Math.random()*10+90);
-            int degat = (int)((aleat*42*this.force*100)/(50*J2.defensePhysique*100));
-            if(degat >= 0){
-                J2.vie -= degat;
-                this.vie =(int)(this.vie+(degat/2));
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et recupere "+(int)(degat/2)+" points de vie");
-            }else{
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
-            }
-            
-            
-            }else{
-			System.out.println(J2.nom +" esquive l'attaque");
-			}
-			this.mana  -= 60;
-            att = true;
-        }else{
-            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
-            System.out.println("Rechoisi ton attaque !! ");
-            att = false;
-        }
-
-        
-        return att;
-        
-    }
+    
 }
