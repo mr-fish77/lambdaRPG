@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Omar extends Assassin{
-    int poison;
+  
     
     public Omar(){
         
-        super("Omar m'a tuer", 230, 100 , 550, 120, 257, 0, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
-        int poison =0;
+        super("Omar m'a tuer", 688,100,299,394,280,209,20,259,0,0,0,0);     //nom, vie, mana, defense, force, vitesse, magie, recupération, resistance magique, poison, brulure, sommeil, paralysie
+       
     }
     
      public void attaquer(Personnage J2){
@@ -15,36 +15,46 @@ public class Omar extends Assassin{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
         
-        if(poison != 0){
-            J2.vie = J2.vie - 50;
-            System.out.println(J2.nom + " est empoisonne, il subit 50 degats !! ");
-            System.out.println("");
-            poison --;
-        }
-
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-La meca m'a tuer    2-L'info m'a tuer     3-La cristallo m'a tuer   4- Les maths m'ont tuer   5-L'insa m'a achever     6-Passer son tour" );
+        System.out.println("1-");  
+        System.out.println("2-");
+        System.out.println("3-");
+        System.out.println("4-");
+        System.out.println("5- Cours de Maths : 50% de chance de causer 200 degats");
+        System.out.println("6- Attaque puissante mais J1 subit aussi des degats");
+        System.out.println("7- Attaque tres faible ");
+        System.out.println("8- Attaque faible qui empoisonne l'ennemie");
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
             
             switch (choixAttaque){
                 case 1:
-                    attok = amortlacatin(J2);
+                    attok = attaque1(J2);
                 break;
                 case 2:
-                    attok = aconite(J2);
+                    attok = attaque2(J2);
                 break;
                 case 3:
-                    attok = augmentationDefense();
+                    attok = attaque3(J2);
                 break;
                 case 4:
-                    attok = attaqueRapide(J2);
+                    attok = attaque4();
                 break;
                 case 5:
-                    attok = attaquePuissante(J2);
+                    attok = attaque5(J2);
                 break;
                 case 6:
+                    attok = attaque6(J2);
+                break;
+                case 7:
+                    attok = attaque7(J2);
+                break;
+                case 8:
+                    attok = attaque8(J2);
+                break;
+                case 9:
                     System.out.println(this.nom +  " passe son tour !");
                     attok = true;
                 break;
@@ -57,16 +67,48 @@ public class Omar extends Assassin{
         
     }
        
-    public boolean amortlacatin(Personnage J2){
+    public boolean attaque5(Personnage J2){ //50% de chance de causer 200 degats 
         boolean att = false;
+        if( this.mana >= 60){
+			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+			if(esquive>50){
+            J2.vie-=200;  
+            System.out.println(this.nom + " ecrit des equations avec son sang. " + J2.nom + " n'y comprend rien. Il se sent mal et subit 200 de degat");        
+            }else{
+			System.out.println(" Il ne se passe rien");
+			}
+			this.mana  -= 60;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
         
-        if( this.mana >= 50){
+        return att;
+        
+    }
+       
+       
+    
+     public boolean attaque6(Personnage J2){ //attaque puissante, J1 subit 1/6 des degats 
+        
+        boolean att = false;
+        if( this.mana >= 80){
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.force*150)/(50*J2.defensePhysique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                this.vie-=(int)(degat/6);
+                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println("En retour, il subit "+ (int)(degat/6)+" degats");
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
+            }
+            this.mana  -= 80;
             
-            int degat = 250;
-            J2.vie = J2.vie - degat;
-            System.out.println(this.nom + " Le joueur ecrit des equations avec son sang. " + J2.nom + " n'y comprend rien. Il se sent mal et subit 250 de degat");
-            this.mana  = this.mana - 50;
-            att =true;
+            att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
@@ -74,7 +116,59 @@ public class Omar extends Assassin{
         }
         
         return att;
+    }
+    
+         public boolean attaque7(Personnage J2){ // attaque tres faible 
         
+        boolean att = false;
+        if( this.mana >= 10){
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.force*10)/(50*J2.defensePhysique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                
+                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
+               
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
+            }
+            this.mana  -= 10;
+            
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+        
+        return att;
+    }
+    
+    public boolean attaque8(Personnage J2){ //attaque faible qui empoisonne l'ennemie
+        
+        boolean att = false;
+        if( this.mana >= 40){
+            int aleat = (int)(Math.random()*10+90);
+            int degat = (int)((aleat*42*this.force*30)/(50*J2.defensePhysique*100));
+            if(degat >= 0){
+                J2.vie -= degat;
+                
+                System.out.println(this.nom + " noie "+J2.nom+" dans un la mer noire, le forte teneur en sel de l'eau empoisonne "+J2.nom);
+               
+            }else{
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais la noyade l'empoisonne car l'eau n'etait pas tres nette");
+            }
+            J2.poison=4;
+            this.mana  -= 40;
+            
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+        
+        return att;
     }
     
 }

@@ -4,7 +4,7 @@ public class Kimjongun extends Guerrier{
 
     public Kimjongun(){
         
-        super("Kim jong un", 350, 100 , 250, 220, 120, 0, 20);     //nom, vie, mana, defense, force, vitesse, magie, recupération
+        super("Kim jong un", 868,100,359,379,259,209,20,209,0,0,0,0);    //nom, vie, mana, defense, force, vitesse, magie, recupération, resistance magique, poison, brulure, sommeil, paralysie
 
     }
      /** 
@@ -16,30 +16,47 @@ public class Kimjongun extends Guerrier{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-Lance missiles    2-Boularmure     3-Tibo Yinshape    4- Pichenette   5-This is sparta    6-Passer son tour" );
+         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1-");  
+        System.out.println("2-");
+        System.out.println("3-");
+        System.out.println("4-");
+        System.out.println("5- Augmente vitesse, force et defense");
+        System.out.println("6- L'attaque a 50% de chance de causer 200 degats");
+        System.out.println("7- Augmente la vitesse de 20%");
+        System.out.println("8- Vote");
+        System.out.println("9-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
             int choixAttaque = sc.nextInt();
             
-            switch (choixAttaque){
+             switch (choixAttaque){
                 case 1:
-                    attok = lanceMissile(J2);
+                    attok = attaque1(J2);
                 break;
                 case 2:
-                    attok = augmentationDefense();
+                    attok = attaque2(J2);
                 break;
                 case 3:
-                    attok = augmentationForce();
+                    attok = attaque3(J2);
                 break;
                 case 4:
-                    attok = attaqueRapide(J2);
+                    attok = attaque4();
                 break;
                 case 5:
-                    attok = attaquePhysiquePuissante(J2);
+                    attok = attaque5(J2);
                 break;
                 case 6:
+                    attok = attaque6(J2);
+                break;
+                case 7:
+                    attok = attaque7(J2);
+                break;
+                case 8:
+                    attok = attaque8(J2);
+                break;
+                case 9:
                     System.out.println(this.nom +  " passe son tour !");
                     attok = true;
                 break;
@@ -57,21 +74,86 @@ public class Kimjongun extends Guerrier{
     *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
     *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
     */
-    public boolean lanceMissile(Personnage J2){
+   public boolean attaque5(Personnage J2){// augmente vitesse force defense 
         boolean att = false;
         
-        if( this.mana >= 50){ //condition de mana
+        if( this.mana >= 50){
             
-            int degat = this.vitesse; //détermine les dégats comme égaux à la vitesse du joueur
-            J2.vie = J2.vie - degat; //inflige les dégats de l'attaque
-            System.out.println(this.nom + " lance ses missiles sur l'adversaire!! La defense de " + J2.nom + " est sans effet !!   Il fait " + degat + " degats a " + J2.nom);
-            this.mana  = this.mana - 50; //cout en mana de l'attaque
-            att =true;  //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
+            this.defensePhysique = (int)(this.defensePhysique*1.2);
+            this.vitesse = (int)(this.vitesse*1.2);
+            this.force = (int)(this.force*1.2);
+            System.out.println(this.nom + " augmente sa defense, sa vitesse et sa force de 20%");
+            this.mana  -= 50;
+            att =true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            att = false; //renvoie au choix de l'attaque
+            att = false;
         }
+        
+        return att;
+        
+    }
+    
+        public boolean attaque6(Personnage J2){ //50% chance causer 200 degats
+        
+        boolean att = false;
+        if( this.mana >= 60){
+			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+			if(esquive>50){
+            J2.vie-=200;  
+            System.out.println("La defense de "+J2.nom+" est innefficace, il perd 200 PV");         
+            }else{
+			System.out.println(" Les missiles se sont encore une fois ecrases dans la mer du Japon");
+			}
+			this.mana  -= 60;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+        
+    }
+    
+    public boolean attaque7(Personnage J2){ //augmente vitesse de 20%
+        
+        boolean att = false;
+        if( this.mana >= 40){
+			this.vitesse=(int)(this.vitesse*1.2);
+            System.out.println(this.nom+" augmente sa vitesse de 20%");
+			this.mana  -= 40;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
+        
+        return att;
+        
+    }
+    
+     public boolean attaque8(Personnage J2){ //Rien ne se passe 
+        
+        boolean att = false;
+        if( this.mana >= 10){
+			
+            System.out.println(this.nom+" organise un vote");
+            System.out.println("Il est elu a l'unanimite");
+            System.out.println("Rien ne se passe ");
+			this.mana  -= 10;
+            att = true;
+        }else{
+            System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
+            System.out.println("Rechoisi ton attaque !! ");
+            att = false;
+        }
+
         
         return att;
         
