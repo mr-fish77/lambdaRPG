@@ -15,12 +15,16 @@ public class Balthazar extends Mage{
         
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
+	     
+
+
+
 
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println("1- Attaque puissante qui peut aleatoirement diminuer resistance magique de J2");  
+        System.out.println("2- Attaque faible qui peut aleatoirement bruler J2");
+        System.out.println("3- Attaque moyenne");
+        System.out.println("4- Augmentation magie de 20%");
         System.out.println("5- Attaque physique puissante");
         System.out.println("6- Attaque magique provoquant brulure");
         System.out.println("7- Attaque magique et diminution resistance magique de J2 de 20%");
