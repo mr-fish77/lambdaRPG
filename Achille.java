@@ -16,10 +16,10 @@ public class Achille extends Guerrier{
         
 	//affichage des attaque du personnage
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- : attaque puissante avec 10% de chance de baisser def spe");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println("1- Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
+        System.out.println("2- Attaque puissante qui provoque legere paralysie");
+        System.out.println("3- Attaque moyenne ");
+        System.out.println("4- Augmente la defense de J1 de 20%");
         System.out.println("5- Attaque puissante mais le joueur se blesse en contrepartie \n cout: 80 puissance: 150 precision: 100 ");
         System.out.println("6- Attaque provoquant paralysie \n cout: 40 puissance: 30 precision: 60 ");
         System.out.println("7- Diminue vitesse J2");
