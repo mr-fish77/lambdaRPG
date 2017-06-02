@@ -25,7 +25,7 @@ public class Kimjongun extends Guerrier{
         System.out.println("6- Lance missile: L'attaque a 50% de chance de causer 200 degats \n cout: 60, puissance: - , precision: 50");
         System.out.println("7- Regime (communiste): Augmente la vitesse de 20% \n cout: 40, puissance: - , precision: - ");
         System.out.println("8- Vote \n cout: 10, puissance: - , precision: 100");
-        System.out.println("9-Passer son tour" );
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
