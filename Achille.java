@@ -16,14 +16,14 @@ public class Achille extends Guerrier{
         
 	//affichage des attaques du personnage
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
-        System.out.println("2- Attaque puissante qui provoque legere paralysie");
-        System.out.println("3- Attaque moyenne ");
-        System.out.println("4- Augmente la defense de J1 de 20%");
-        System.out.println("5- Attaque puissante mais le joueur se blesse en contrepartie \n cout: 80, puissance: 150, precision: 100 ");
-        System.out.println("6- Attaque provoquant paralysie \n cout: 40, puissance: 30, precision: 60 ");
-        System.out.println("7- Diminue vitesse J2 \n cout: 40, puissance: - , precision: -  ");
-        System.out.println("8- Augmentation attaque \n cout: 40, puissance: - , precision: -  "");
+        System.out.println("1- Pichenette: Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
+        System.out.println("2- This is Sparta !: Attaque puissante qui provoque legere paralysie");
+        System.out.println("3- Fureur sanguine: Attaque moyenne ");
+        System.out.println("4- Rempart: Augmente la defense de J1 de 20%");
+        System.out.println("5- Talonette: Attaque puissante mais le joueur se blesse en contrepartie \n cout: 80, puissance: 150, precision: 100 ");
+        System.out.println("6- Foudre de Zeus: Attaque provoquant paralysie \n cout: 40, puissance: 30, precision: 60 ");
+        System.out.println("7- Mélasse: Diminue vitesse J2 \n cout: 40, puissance: - , precision: -  ");
+        System.out.println("8- AirMesMax: Augmentation attaque \n cout: 40, puissance: - , precision: -  "");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
@@ -80,7 +80,7 @@ public class Achille extends Guerrier{
             int aleat = (int)(Math.random()*10+90); 
             int degat = (int)((aleat*42*this.force*150)/(50*J2.defensePhysique*100));
             if(degat >= 0){ // si les dégats sont suffisants le joueur peut attquer
-                J2.vie -= degat; //diminution de la vie de l'ennemie
+                J2.vie -= degat; //diminution de la vie de l'ennemi
                 this.vie-=(int)(degat/6);  //diminution de la vie du joeur
                 System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom ); //texte de description
                 System.out.println("Cependant il se blesse et il subit "+ (int)(degat/6)+" degats");
@@ -112,7 +112,7 @@ public class Achille extends Guerrier{
             		int aleat = (int)(Math.random()*10+90); 
             		int degat = (int)((aleat*42*this.force*30)/(50*J2.defensePhysique*100)); //calcul des degat
             if(degat >= 0){ // si les dégats sont suffisants le joueur peut attquer
-                J2.vie -= degat; //diminution de la vie de l'ennemie
+                J2.vie -= degat; //diminution de la vie de l'ennemi
                 System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et le paralyse");
             }else{ //les dégts sont insuffisants
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est paralyse");
@@ -129,7 +129,7 @@ public class Achille extends Guerrier{
             System.out.println("Rechoisi ton attaque !! ");
             att = false;//attaque n'a pas eut lieu
         }
-        return att;//retourne l'état de l'attaque
+        return att;//retourne l'etat de l'attaque
     }
     
     /**
@@ -139,8 +139,7 @@ public class Achille extends Guerrier{
     */
     public boolean attaque7(Personnage J2){ // attaque diminuant la  vitesse  de J2
         boolean att = false; 
-        if( this.mana >= 40){ //si le mana est suffisant le joueur peut attaquer
-			
+        if( this.mana >= 40){ //si le mana est suffisant le joueur peut attaquer	
            J2.vitesse= (int)(J2.vitesse*0.9); //diminution de la vitesse 
             System.out.println("La vitesse de "+J2.nom + " diminue de 10%");
 	    this.mana  -= 40; //diminution du mana
@@ -149,10 +148,8 @@ public class Achille extends Guerrier{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
             att = false; //attaque n'a pas eut lieu
-        }
-
-        
-        return att;
+        }   
+        return att; //retourne l'état de l'attaque
         
     }
     
@@ -170,9 +167,7 @@ public class Achille extends Guerrier{
             att = false; //attaque n'a pas eut lieu
         }
 
-        
-        return att;
-        
+        return att; //retourne l'état de l'attaque
     }
     
 }
