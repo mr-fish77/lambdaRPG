@@ -17,10 +17,10 @@ public class Pikachu extends Mage{
         System.out.println("2-");
         System.out.println("3-");
         System.out.println("4-");
-        System.out.println("5- Attaque puissante mais J1 subit egalement des degats");
-        System.out.println("6- Fatal foudre : Attaque provoquant des degats aleatoires");
-        System.out.println("7- Augmente la recuperation de mana de 50%");
-        System.out.println("8- Attaque faible mais J2 est paralyse ");
+        System.out.println("5- Electacle : Attaque puissante mais J1 subit egalement des degats \n cout : 80, puissance : 150, precision : 100" );
+        System.out.println("6- Fatal foudre : Attaque provoquant des degats aleatoires \n cout : 60, puissance : aleatoire, precision : 80");
+        System.out.println("7- Augmente la recuperation de mana de 50% \n cout 40, puissance : -, precision : 100");
+        System.out.println("8- Attaque faible mais J2 est paralyse \n cout : 40, puissance : 30, precision : 60");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){
