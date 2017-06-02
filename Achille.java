@@ -14,16 +14,16 @@ public class Achille extends Guerrier{
         Scanner sc = new Scanner(System.in);
         boolean attok = false;
         
-	//affichage des attaque du personnage
+	//affichage des attaques du personnage
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
         System.out.println("1- Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
         System.out.println("2- Attaque puissante qui provoque legere paralysie");
         System.out.println("3- Attaque moyenne ");
         System.out.println("4- Augmente la defense de J1 de 20%");
-        System.out.println("5- Attaque puissante mais le joueur se blesse en contrepartie \n cout: 80 puissance: 150 precision: 100 ");
-        System.out.println("6- Attaque provoquant paralysie \n cout: 40 puissance: 30 precision: 60 ");
-        System.out.println("7- Diminue vitesse J2");
-        System.out.println("8- Augmentation attaque");
+        System.out.println("5- Attaque puissante mais le joueur se blesse en contrepartie \n cout: 80, puissance: 150, precision: 100 ");
+        System.out.println("6- Attaque provoquant paralysie \n cout: 40, puissance: 30, precision: 60 ");
+        System.out.println("7- Diminue vitesse J2 \n cout: 40, puissance: - , precision: -  ");
+        System.out.println("8- Augmentation attaque \n cout: 40, puissance: - , precision: -  "");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
@@ -87,7 +87,7 @@ public class Achille extends Guerrier{
             }else{ //les dégts sont insuffisants 
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
-            this.mana  -= 80; //diminution du manana
+            this.mana  -= 80; //diminution du mana
             att = true; //attaque a bien eut lieu
         }else{ //si le mana n'est pas suffisant le joueur peut attaquer
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" ); 
@@ -122,7 +122,7 @@ public class Achille extends Guerrier{
             }else{ //si la precission n'est pas suffisante le joueur ne peut pas attaquer
 			System.out.println(J2.nom +" esquive l'attaque");
 			}
-	    this.mana  -= 40; //diminution du manana
+	    this.mana  -= 40; //diminution du mana
             att = true; //attaque a bien eut lieu
         }else{ //si le mana n'est pas suffisant le joueur peut attaquer
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -143,7 +143,7 @@ public class Achille extends Guerrier{
 			
            J2.vitesse= (int)(J2.vitesse*0.9); //diminution de la vitesse 
             System.out.println("La vitesse de "+J2.nom + " diminue de 10%");
-	    this.mana  -= 40; //diminution du manana
+	    this.mana  -= 40; //diminution du mana
             att = true; //attaque a bien eut lieu
         }else{ //si le mana n'est pas suffisant le joueur peut attaquer
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -159,15 +159,15 @@ public class Achille extends Guerrier{
     public boolean attaque8(){ //Augmentation att
          
         boolean att = false;
-        if( this.mana >= 40){
-            this.force = (int)(this.force*1.2);
+        if( this.mana >= 40){ //si le mana est suffisant le joueur peut attaquer
+            this.force = (int)(this.force*1.2); //augmznte la force du joueur
             System.out.println(this.nom+" augmente sa force de 20%");
-            this.mana  -= 40;
-            att = true;
+            this.mana  -= 40; //diminution du mana
+            att = true; //attaque a bien eut lieu
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            att = false;
+            att = false; //attaque n'a pas eut lieu
         }
 
         
