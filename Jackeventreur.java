@@ -21,11 +21,11 @@ public class Jackeventreur extends Assassin{
    
         
 
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1- Attaque faible mais qui diminue la defense de J2");  
+        System.out.println("2- Attaque puissante avec 1 chance sur 2 de causer 2 fois plus de degats ");
+        System.out.println("3- Attaque moyenne ");
+        System.out.println("4- Augmente la vitesse de J1 de 20%");
         System.out.println("5- Attaque puissante");
         System.out.println("6- Diminue la vitesse de J2 de 10%");
         System.out.println("7- Attaque faible mais qui inflige brulure");
