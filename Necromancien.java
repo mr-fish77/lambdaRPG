@@ -9,7 +9,7 @@ public class Necromancien extends Personnage{
     }
     
     
-    public boolean attaque4(Personnage J2){
+    public boolean attaque4(Personnage J2){ //Attaque faible qui provoque poison 
         
         boolean att = false;
         if( this.mana >= 40){
@@ -41,7 +41,7 @@ public class Necromancien extends Personnage{
         
     }
     
-    public boolean attaque1(Personnage J2){
+    public boolean attaque1(Personnage J2){ //Attaque faible qui peut aleatoirement empoisonner l'ennemi
         
        boolean att = false;
         if( this.mana >= 40){
@@ -58,7 +58,7 @@ public class Necromancien extends Personnage{
 				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
 			}
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
             
             
@@ -76,7 +76,7 @@ public class Necromancien extends Personnage{
     }
     
     
-    public boolean attaque2(Personnage J2){
+    public boolean attaque2(Personnage J2){ // Attaque moyenne qui peut diminuer resistance magique de J2
         
          boolean att = false;
         if( this.mana >= 50){
@@ -88,12 +88,12 @@ public class Necromancien extends Personnage{
                 int baisse= (int)(Math.random()*100);
                 if (baisse<11){
 					J2.vitesse=(int)(0.9*J2.vitesse);
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et diminue sa resistance magique de 10%");
+                System.out.println(this.nom + " fait une attaque moderee. Il cause " +degat+ " degats a " + J2.nom +" et diminue sa resistance magique de 10%");
 			}else{
-				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+				System.out.println(this.nom + " fait une attaque moderee. Il cause " +degat+ " degats a " + J2.nom);
 			}
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
             
             
@@ -112,7 +112,7 @@ public class Necromancien extends Personnage{
 
       
     
-     public boolean attaque3(Personnage J2){
+     public boolean attaque3(Personnage J2){ // Attaque moyenne, J1 peut aleatoirement recuperer 100 HP
         boolean att = false;
         if( this.mana >= 50){
 			
@@ -123,12 +123,12 @@ public class Necromancien extends Personnage{
                 int revi= (int)(Math.random()*100);
                 if (revi<11){
 					this.vie +=100;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et recupere 100 HP");
+                System.out.println(this.nom + " fait une attaque moderee. Il cause " +degat+ " degats a " + J2.nom +" et recupere 100 HP");
 			}else{
-				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+				System.out.println(this.nom + " fait une attaque moderee. Il cause " +degat+ " degats a " + J2.nom);
 			}
             }else{
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! ");
             }
             
             
