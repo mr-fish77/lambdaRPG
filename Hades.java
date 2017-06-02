@@ -16,17 +16,17 @@ public class Hades extends Necromancien{
         
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
-
+	     
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
+        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
+        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
+        System.out.println("4- Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
         System.out.println("5- J2 perd 30% de sa vie mais J1 en perd 10% egalement");
         System.out.println("6- Convertie 10% de la vie de J2 en mana pour J1");
         System.out.println("7- Attaque faible mais qui brule l'ennemie");
         System.out.println("8- Attaque faible avec 10% de chance d'endormir l'ennemie");
-        System.out.println("9-Passer son tour" );
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
