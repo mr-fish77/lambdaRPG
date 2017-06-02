@@ -17,15 +17,15 @@ public class Loki extends Necromancien{
         Scanner sc = new Scanner(System.in);
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+         System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
+        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
+        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
+        System.out.println("4- Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
         System.out.println("5- Endort l'ennemie ");
         System.out.println("6- Haleine fetide : Provoque brulure, poison et paralysie");
         System.out.println("7- Attaque faible mais qui inflige poison");
         System.out.println("8- Diminue la vitesse de J2 de 10%");
-        System.out.println("9-Passer son tour" );
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
