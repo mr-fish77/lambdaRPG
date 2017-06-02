@@ -17,15 +17,15 @@ public class Hadrien extends Guerrier{
         Scanner sc = new Scanner(System.in);
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println("1- Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
+        System.out.println("2- Attaque puissante qui provoque legere paralysie");
+        System.out.println("3- Attaque moyenne ");
+        System.out.println("4- Augmente la defense de J1 de 20%");
         System.out.println("5- Attaque puissante mais J1 subit la moitie des degats");
         System.out.println("6- Attaque puissante qui diminue la defense adverse de 20%");
         System.out.println("7- Augmente la vitesse de J1 de 20%");
         System.out.println("8- Paralyse J2");
-        System.out.println("9-Passer son tour" );
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
