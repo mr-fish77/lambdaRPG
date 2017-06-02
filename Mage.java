@@ -8,7 +8,7 @@ public class Mage extends Personnage{
     
    
     
-    public boolean attaque1(Personnage J2){ // degats + baisse def spe
+    public boolean attaque1(Personnage J2){ // Attaque puissante qui peut aleatoirement diminuer resistance magique de J2
         
         boolean att = false;
         
@@ -26,7 +26,7 @@ public class Mage extends Personnage{
 					}
 		
 				}else{
-                System.out.println("l'attaque est sans effet. L'ennemie e trop de defense !!");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
 				}
         
             
@@ -44,7 +44,7 @@ public class Mage extends Personnage{
         
     }
 
-    public boolean attaque2(Personnage J2){ // degats + brulure
+    public boolean attaque2(Personnage J2){ // attaque faible qui peut aleatoirement bruler J2
         
         boolean att = false;
         if( this.mana >= 30){
@@ -53,8 +53,8 @@ public class Mage extends Personnage{
             if(degat >= 0){
                 J2.vie -= degat;
                 System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
-				int brulure = (int)(Math.random()*100);
-					if (brulure<=10) {
+				int flamme = (int)(Math.random()*100);
+					if (flamme<=10) {
 					J2.brulure=3;
 					System.out.println(J2.nom+" a ete brule lors de l'attaque");
             }else{
@@ -74,7 +74,7 @@ public class Mage extends Personnage{
 	
 	}
     
-    public boolean attaque3(Personnage J2){ //degats
+    public boolean attaque3(Personnage J2){ //Attaque moyenne
         
         boolean att = false;
         if( this.mana >= 40){
@@ -82,7 +82,7 @@ public class Mage extends Personnage{
             int degat = (int)((aleat*42*this.force*80)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque moderee. Il cause " +degat+ " degats a " + J2.nom );
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
@@ -99,11 +99,12 @@ public class Mage extends Personnage{
         
     }
     
-    public boolean attaque4(){ //Augmentation att spe
+    public boolean attaque4(){ //Augmentation magie de 20%
          
         boolean att = false;
         if( this.mana >= 40){
             this.magie = (int)(this.magie*1.2);
+	    System.out.println("La magie de "+this.nom+" augmente de 20%");
             this.mana  -= 40;
             att = true;
         }else{
