@@ -21,10 +21,10 @@ public class Balthazar extends Mage{
         System.out.println("2- Attaque faible qui peut aleatoirement bruler J2 \n cout : 30 puissance : 50 precision : 100");
         System.out.println("3- Attaque moyenne \n cout : 40 puissance : 80 precision : 100");
         System.out.println("4- Augmentation magie de 20% \n cout : 40 puissance :-  precision : 100");
-        System.out.println("5- Attaque physique puissante");
-        System.out.println("6- Attaque magique provoquant brulure");
-        System.out.println("7- Attaque magique et diminution resistance magique de J2 de 20%");
-        System.out.println("8- Regeneration de vie");
+        System.out.println("5- Poing de pierre : Attaque physique puissante, inflige de lourd degats a J2 mais diminue la magie de J1 \n cout : 80, puissance : 150, precision 100");
+        System.out.println("6- Amphi Capelle : Attaque magique infligeant des degats et provoquant brulure \n cout : 40, puissance : 30, precision 60");
+        System.out.println("7- Flux et reflux : Attaque magique inflige des degats et diminue la resistance magique de J2 \n cout : 60, puissance : 70, precision : 80");
+        System.out.println("8- Lévitation : Se soigne de quelques points de vie \n cout : 50, puissance : -, precision : 100");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
