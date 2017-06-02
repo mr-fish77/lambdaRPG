@@ -12,16 +12,16 @@ public class Spartacus extends Guerrier{
         Scanner sc = new Scanner(System.in);
         boolean attok = false;
         
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1- Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
+        System.out.println("2- Attaque puissante qui provoque legere paralysie");
+        System.out.println("3- Attaque moyenne ");
+        System.out.println("4- Augmente la defense de J1 de 20%");
         System.out.println("5- Renomme : diminue defense et augmente l'attaque de 10%");
         System.out.println("6- Convertie 5% de sa vie en mana");
         System.out.println("7- Attaque puissante, mais J1 subit egalement des degats");
         System.out.println("8- Augmente la vitesse de 20%");
-        System.out.println("9-Passer son tour" );
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
