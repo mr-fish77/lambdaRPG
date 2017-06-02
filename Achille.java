@@ -14,12 +14,15 @@ public class Achille extends Guerrier{
         Scanner sc = new Scanner(System.in);
         boolean attok = false;
         
+
+
+
 	//affichage des attaques du personnage
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- Pichenette: Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
-        System.out.println("2- This is Sparta !: Attaque puissante qui provoque legere paralysie");
-        System.out.println("3- Fureur sanguine: Attaque moyenne ");
-        System.out.println("4- Rempart: Augmente la defense de J1 de 20%");
+        System.out.println("1- Pichenette: Attaque faible et peut aleatoirement diminuer defense J2 de 20% \n cout : 30 puissance : 40 precision : 100");  
+        System.out.println("2- This is Sparta !: Attaque puissante qui provoque legere paralysie \n cout : 50 puissance : 80 precision : 90 ");
+        System.out.println("3- Fureur sanguine: Attaque moyenne \n cout : 40 puissance : 70 precision : 100");
+        System.out.println("4- Rempart: Augmente la defense de J1 de 20% \n cout : 40 puissance :-  precision : 100");
         System.out.println("5- Talonette: Attaque puissante mais le joueur se blesse en contrepartie \n cout: 80, puissance: 150, precision: 100 ");
         System.out.println("6- Foudre de Zeus: Attaque provoquant paralysie \n cout: 40, puissance: 30, precision: 60 ");
         System.out.println("7- Mélasse: Diminue vitesse J2 \n cout: 40, puissance: - , precision: -  ");
