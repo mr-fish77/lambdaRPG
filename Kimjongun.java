@@ -16,11 +16,11 @@ public class Kimjongun extends Guerrier{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
 
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1- Attaque faible et peut aleatoirement diminuer defense J2 de 20%");  
+        System.out.println("2- Attaque puissante qui provoque legere paralysie");
+        System.out.println("3- Attaque moyenne ");
+        System.out.println("4- Augmente la defense de J1 de 20%");
         System.out.println("5- Augmente vitesse, force et defense");
         System.out.println("6- L'attaque a 50% de chance de causer 200 degats");
         System.out.println("7- Augmente la vitesse de 20%");
