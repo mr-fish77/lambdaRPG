@@ -18,13 +18,13 @@ public class Kimjongun extends Guerrier{
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
          System.out.println("1- Pichenette: Attaque faible et peut aleatoirement diminuer defense J2 de 20% \n cout : 30 puissance : 40 precision : 100");  
-+        System.out.println("2- This is Sparta !: Attaque puissante qui provoque legere paralysie  \n cout : 50 puissance : 80 precision : 90 ");
-+        System.out.println("3- Fureur sanguine: Attaque magique moyenne \n cout : 40 puissance : 70 precision : 100");
-+        System.out.println("4- Rempart: Augmente la defense de J1 de 20% \n cout : 40 puissance :-  precision : 100");
-+        System.out.println("5- Purge: Augmente vitesse, force et defense \n cout: 50, puissance: - , precision: -");
-+        System.out.println("6- Lance missile: L'attaque a 50% de chance de causer 200 degats \n cout: 60, puissance: - , precision: 50");
-+        System.out.println("7- Regime (communiste): Augmente la vitesse de 20% \n cout: 40, puissance: - , precision: - ");
-+        System.out.println("8- Vote \n cout: 10, puissance: - , precision: 100");
+        System.out.println("2- This is Sparta !: Attaque puissante qui provoque legere paralysie  \n cout : 50 puissance : 80 precision : 90 ");
+        System.out.println("3- Fureur sanguine: Attaque magique moyenne \n cout : 40 puissance : 70 precision : 100");
+        System.out.println("4- Rempart: Augmente la defense de J1 de 20% \n cout : 40 puissance :-  precision : 100");
+        System.out.println("5- Purge: Augmente vitesse, force et defense \n cout: 50, puissance: - , precision: -");
+        System.out.println("6- Lance missile: L'attaque a 50% de chance de causer 200 degats \n cout: 60, puissance: - , precision: 50");
+        System.out.println("7- Regime (communiste): Augmente la vitesse de 20% \n cout: 40, puissance: - , precision: - ");
+        System.out.println("8- Vote \n cout: 10, puissance: - , precision: 100");
          System.out.println("9-Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
@@ -122,44 +122,51 @@ public class Kimjongun extends Guerrier{
         return att; //retourne l'etat de l'attaque
         
     }
+	
+/**
+*Cette methode decrit l'attaque speciale 7 du personnage. 
+  *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
+   *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
+   */
     
     public boolean attaque7(Personnage J2){ //augmente vitesse de 20%
         
-        boolean att = false;
-        if( this.mana >= 40){
-			this.vitesse=(int)(this.vitesse*1.2);
-            System.out.println(this.nom+" augmente sa vitesse de 20%");
-			this.mana  -= 40;
-            att = true;
-        }else{
+        boolean att = false; 
+        if( this.mana >= 40){ //si le mana est suffisant le joueur peut attaquer
+	    this.vitesse=(int)(this.vitesse*1.2); //augmentation de la vitesse
+            System.out.println(this.nom+" commence un regime (pas politique) vue sur Lenine.vodka \n Il augmente sa vitesse de 20%");
+	    this.mana  -= 40; //diminution du mana
+            att = true; //attaque a bien eut lieu
+        }else{  //si le mana n'est pas suffisant le joueur peut attaquer
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            att = false;
+            att = false; //attaque n'a pas eut lieu
         }
-
-        
-        return att;
-        
+        return att; //retourne l'etat de l'attaque    
     }
+	/**
+    *Cette methode decrit l'attaque speciale 8 du personnage. 
+    *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
+    *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
+    */
     
-     public boolean attaque8(Personnage J2){ //Rien ne se passe 
+     public boolean attaque8(Personnage J2){ //Rien ne se passe : attaque troll ^^
         
         boolean att = false;
-        if( this.mana >= 10){
-			
-            System.out.println(this.nom+" organise un vote");
-            System.out.println("Il est elu a l'unanimite");
-            System.out.println("Rien ne se passe ");
-			this.mana  -= 10;
-            att = true;
-        }else{
+        if( this.mana >= 10){  //si le mana est suffisant le joueur peut attaquer	
+            System.out.println(this.nom+" organise un vote, il ne sent pas bien");
+            System.out.println(" Etonnamment, il est elu a l'unanimite");
+            System.out.println("Rien ne se passe ... ");
+	    this.mana  -= 10;   //diminution du mana
+            att = true; //attaque a bien eut lieu
+        }else{ //si le mana n'est pas suffisant le joueur peut attaquer
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            att = false;
+            att = false; //attaque n'a pas eut lieu
         }
 
         
-        return att;
+        return att; //retourne l'etat de l'attaque 
         
     }
 }
