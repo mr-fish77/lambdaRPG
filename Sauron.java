@@ -14,10 +14,10 @@ public class Sauron extends Necromancien{
         Scanner sc = new Scanner(System.in);
 
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+         System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
+        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
+        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
+        System.out.println("4- Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
         System.out.println("5- La vie de J1 est divise par 2 mais celle de J2 par 4");
         System.out.println("6- J2 perd 30% de sa vie mais J1 en perd 10% egalement");
         System.out.println("7- Vole 10% des HP de J2");
