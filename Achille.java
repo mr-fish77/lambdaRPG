@@ -87,7 +87,7 @@ public class Achille extends Guerrier{
                 this.vie-=(int)(degat/6);  //diminution de la vie du joeur
                 System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom ); //texte de description
                 System.out.println("Cependant il se blesse et il subit "+ (int)(degat/6)+" degats");
-            }else{ //les dégts sont insuffisants 
+            }else{ //les dégats sont insuffisants 
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
             this.mana  -= 80; //diminution du mana
@@ -114,17 +114,16 @@ public class Achille extends Guerrier{
 		if(esquive>40){ //si la precission est suffisante le joueur peut attaquer
             		int aleat = (int)(Math.random()*10+90); 
             		int degat = (int)((aleat*42*this.force*30)/(50*J2.defensePhysique*100)); //calcul des degat
-            if(degat >= 0){ // si les dégats sont suffisants le joueur peut attquer
-                J2.vie -= degat; //diminution de la vie de l'ennemi
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et le paralyse");
-            }else{ //les dégts sont insuffisants
-                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est paralyse");
-            }
-            
-            J2.paralysie=4; //J2 est paralyser pendant 4 tours
-            }else{ //si la precission n'est pas suffisante le joueur ne peut pas attaquer
+            		if(degat >= 0){ // si les dégats sont suffisants le joueur peut attquer
+                		J2.vie -= degat; //diminution de la vie de l'ennemi
+                		System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et le paralyse");
+            		}else{ //les dégats sont insuffisants
+                		System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est paralyse");
+            			}
+            		J2.paralysie=4; //J2 est paralyser pendant 4 tours
+            	}else{ //si la precission n'est pas suffisante le joueur ne peut pas attaquer
 			System.out.println(J2.nom +" esquive l'attaque");
-			}
+		}
 	    this.mana  -= 40; //diminution du mana
             att = true; //attaque a bien eut lieu
         }else{ //si le mana n'est pas suffisant le joueur peut attaquer
@@ -155,8 +154,14 @@ public class Achille extends Guerrier{
         return att; //retourne l'état de l'attaque
         
     }
+			   
+   /**
+    *Cette methode decrit l'attaque7 speciale du personnage. 
+    *@param Personnage J2 prend en parametre le joueur 2 qui est le joueur a attaquer.
+    *@return att modifie l'etat attaque du joueur pour poursuivre le combat.
+    */
     
-    public boolean attaque8(){ //Augmentation att
+    public boolean attaque8(){ //Augmentation attaque  du joueur
          
         boolean att = false;
         if( this.mana >= 40){ //si le mana est suffisant le joueur peut attaquer
