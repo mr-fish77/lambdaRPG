@@ -21,15 +21,15 @@ public class Jackeventreur extends Assassin{
    
         
 
-        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- Attaque faible mais qui diminue la defense de J2");  
-        System.out.println("2- Attaque puissante avec 1 chance sur 2 de causer 2 fois plus de degats ");
-        System.out.println("3- Attaque moyenne ");
-        System.out.println("4- Augmente la vitesse de J1 de 20%");
-        System.out.println("5- Attaque puissante");
-        System.out.println("6- Diminue la vitesse de J2 de 10%");
-        System.out.println("7- Attaque faible mais qui inflige brulure");
-        System.out.println("8- Attaque puissante, J1 recupere la moitie des degats en HP");
+         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1-Feinte: Attaque physique faible qui diminue la defence de J2 \n cout : 30, puissance : 40, precision : 80");  
+        System.out.println("2-Sournoiserie: Attaque physique puissante \n cout : 50, puissance : 90, precision : 100");
+        System.out.println("3-Infiltration: Attaque magique puissante \n cout : 40, puissance : 80, precision : 100");
+        System.out.println("4-Pulsions: Augmente la vitesse du joueur \n cout : 40, puissance : -, precision : 100");
+        System.out.println("5-A mort la catin: Attaque puissante \n cout : 80, puissance : 150, precision : 70");
+        System.out.println("6-Cailou dans la chaussure: Diminue la vitesse de J2 de 10% \n cout : 40, puissance : - , precision : 100");
+        System.out.println("7-Zippo: Attaque faible mais qui inflige brulure \n cout : 40, puissance : 40, precision : 70");
+        System.out.println("8-Canibalisme: Attaque puissante, J1 recupere la moitie des degats en HP \n cout : 60, puissance : 100, precision : 80");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){/**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
