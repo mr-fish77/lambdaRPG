@@ -18,14 +18,14 @@ public class Hades extends Necromancien{
         Scanner sc = new Scanner(System.in);
 	     
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
-        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
-        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
-        System.out.println("4- Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
-        System.out.println("5- J2 perd 30% de sa vie mais J1 en perd 10% egalement");
-        System.out.println("6- Convertie 10% de la vie de J2 en mana pour J1");
-        System.out.println("7- Attaque faible mais qui brule l'ennemie");
-        System.out.println("8- Attaque faible avec 10% de chance d'endormir l'ennemie");
+        System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40, puissance : 30, precision : 100");  
+        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50, puissance : 80, precision : 100");
+        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50, puissance : 80,  precision : 100");
+        System.out.println("4- Attaque faible qui provoque poison \n cout : 40, puissance : 30, precision : 60");
+        System.out.println("5- Retour des enfers: J2 perd 30% de sa vie mais J1 en perd 10% egalement \n cout : 50, puissance : - precision : -");
+        System.out.println("6- Un mal pour un bien: Convertie 10% de la vie de J2 en mana pour J1 \n cout : 40 puissance : - precision : -");
+        System.out.println("7- Bain de lave: Attaque faible mais qui brule l'ennemie \n cout : 40 puissance : - precision : - ");
+        System.out.println("8- Chant morbide: Attaque faible avec 10% de chance d'endormir l'ennemie \n cout : 30 puissance : - precision : -");
         System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
@@ -123,7 +123,7 @@ public class Hades extends Necromancien{
             int degat = (int)(aleat*(42*this.force*30)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et le brule");
+                System.out.println(this.nom + " force son ennemi à prendre un bain de lave. Il cause " +degat+ " degats a " + J2.nom +" et le brule");
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est brule");
             }
@@ -145,19 +145,19 @@ public class Hades extends Necromancien{
         
     }
    
-   public boolean attaque8(Personnage J2){ // degats + 10% chance dodo
+   public boolean attaque8(Personnage J2){ // degats + 10% chance de sommeil
         
         boolean att = false;
         if( this.mana >= 30){
-			int aleat = (int)(Math.random()*10+90);
+	    int aleat = (int)(Math.random()*10+90);
             int degat = (int)((aleat*42*this.magie*50)/(50*J2.resistanceMagique*100));
-            if(degat >= 0){
-                J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
-				int sommeil = (int)(Math.random()*100);
-					if (sommeil<=10) {
-					J2.dodo=3;
-					System.out.println(J2.nom+" a ete endormi lors de l'attaque");
+            	if(degat >= 0){
+                	J2.vie -= degat;
+                	System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom );
+			int sommeil = (int)(Math.random()*100);
+				if (sommeil<=10) {
+				 	J2.dodo=3;
+					System.out.println(J1.nom+" chante la macabrena. Il endore son ennemie");
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
