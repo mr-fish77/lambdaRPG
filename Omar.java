@@ -16,15 +16,15 @@ public class Omar extends Assassin{
         Scanner sc = new Scanner(System.in);
         
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- Attaque faible mais qui diminue la defense de J2");  
-        System.out.println("2- Attaque puissante avec 1 chance sur 2 de causer 2 fois plus de degats ");
-        System.out.println("3- Attaque moyenne ");
-        System.out.println("4- Augmente la vitesse de J1 de 20%");
-        System.out.println("5- Cours de Maths : 50% de chance de causer 200 degats");
-        System.out.println("6- Attaque puissante mais J1 subit aussi des degats");
-        System.out.println("7- Attaque tres faible ");
-        System.out.println("8- Attaque faible qui empoisonne l'ennemie");
-        System.out.println("9- Passer son tour" );
+        System.out.println("1- Feinte: Attaque physique faible qui diminue la defence de J2 \n cout : 30, puissance : 40, precision : 80");  
+        System.out.println("2- Sournoiserie: Attaque physique puissante \n cout : 50, puissance : 90, precision : 100");
+        System.out.println("3- Infiltration: Attaque magique puissante \n cout : 40, puissance : 80, precision : 100");
+        System.out.println("4- Pulsions: Augmente la vitesse du joueur \n cout : 40, puissance : -, precision : 100");
+        System.out.println("5- Cours de Maths : 50% de chance de causer 200 degats \n cout : 60, puissance : -, precision : 50");
+        System.out.println("6- Sous la terrasse: Attaque puissante mais J1 subit aussi des degats \n cout : 80, puissance : 150, precision : -");
+        System.out.println("7- Bescherelle: Attaque tres faible \n cout : 10, puissance : 10, precision : 100");
+        System.out.println("8- Dictée: Attaque faible qui empoisonne l'ennemie \n cout : 40, puissance : 30, precision : 100");
+        System.out.println("9- Passer son tour " );
         
         while(attok == false){
             int choixAttaque = sc.nextInt();
