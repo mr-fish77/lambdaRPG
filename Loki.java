@@ -17,14 +17,14 @@ public class Loki extends Necromancien{
         Scanner sc = new Scanner(System.in);
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-         System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
-        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
-        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
-        System.out.println("4- Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
-        System.out.println("5- Endort l'ennemie ");
-        System.out.println("6- Haleine fetide : Provoque brulure, poison et paralysie");
-        System.out.println("7- Attaque faible mais qui inflige poison");
-        System.out.println("8- Diminue la vitesse de J2 de 10%");
+        System.out.println("1- Putréfaction: Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40, puissance : 30, precision : 100");  
+        System.out.println("2- Décrépitude: Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50, puissance : 80, precision : 100");
+        System.out.println("3- Buveuse d'ame: Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
+        System.out.println("4- Tourment: Attaque faible qui provoque poison \n cout : 40, puissance : 30, precision : 60");
+        System.out.println("5- Blabla: Endort l'ennemie \n cout : 40, puissance : -, precision : 100");
+        System.out.println("6- Haleine fetide : Provoque brulure, poison et paralysie \n cout : 80, puissance : - , precision : 100");
+        System.out.println("7- Verre d'hydromel: Attaque faible mais qui inflige poison \n cout : 40, puissance : - , precision : 100");
+        System.out.println("8- Marteau dans les poches: Diminue la vitesse de J2 de 10% \n cout : 40, puissance : - , precision : 100");
         System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
@@ -77,13 +77,13 @@ public class Loki extends Necromancien{
 		
         boolean att = false;
         if( this.mana >= 40){
-			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+		int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
 			if(esquive>40){
-            J2.dodo=3;
-            System.out.println(this.nom+" souffle son haleine au visage de "+J2.nom+", il s'endort sous le choc");
-            }else{
+            			J2.dodo=3;
+            			System.out.println(this.nom+" se met à parler de vieux livres de magie. " + J2.nom + " s'endore");
+            		}else{
 			System.out.println(J2.nom +" esquive l'attaque");
-			}
+	    		}
             this.mana -=40;
             att = true;
         }else{
@@ -103,7 +103,7 @@ public class Loki extends Necromancien{
             J2.brulure=3;
             J2.poison=3;
             J2.paralysie=4;
-            System.out.println(this.nom+" consomme son energie et cree une vague de magie noire qui brule, empoisonne et paralyse "+J2.nom);
+            System.out.println(this.nom+" souffle sur l'ennemi. Son Haleine brule, empoisonne et paralyse "+J2.nom);
             this.mana  -= 80;
             
             att = true;
@@ -128,7 +128,7 @@ public class Loki extends Necromancien{
             int degat = (int)(aleat*(42*this.force*30)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et l'empoisonne");
+                System.out.println(this.nom + " sert un verre d'hydromel modifie a son ennemi. Il cause " +degat+ " degats a " + J2.nom +" et l'empoisonne");
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !! Mais il est empoisonne");
             }
@@ -155,7 +155,7 @@ public class Loki extends Necromancien{
         if( this.mana >= 40){
 			
            J2.vitesse= (int)(J2.vitesse*0.9);
-                System.out.println("La vitesse de "+J2.nom + " diminue de 10%");
+                System.out.println(this.non + " place le marteau de son frere dans la poche de son ennemi. La vitesse de "+J2.nom + " diminue de 10%");
 			this.mana  -= 40;
             att = true;
         }else{
