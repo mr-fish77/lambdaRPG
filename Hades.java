@@ -18,10 +18,10 @@ public class Hades extends Necromancien{
         Scanner sc = new Scanner(System.in);
 	     
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40, puissance : 30, precision : 100");  
-        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50, puissance : 80, precision : 100");
-        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50, puissance : 80,  precision : 100");
-        System.out.println("4- Attaque faible qui provoque poison \n cout : 40, puissance : 30, precision : 60");
+        System.out.println("1- Putréfaction: Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40, puissance : 30, precision : 100");  
+        System.out.println("2- Décrépitude: Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50, puissance : 80, precision : 100");
+        System.out.println("3- Buveuse d'ame: Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50, puissance : 80,  precision : 100");
+        System.out.println("4- Tourment: Attaque faible qui provoque poison \n cout : 40, puissance : 30, precision : 60");
         System.out.println("5- Retour des enfers: J2 perd 30% de sa vie mais J1 en perd 10% egalement \n cout : 50, puissance : - precision : -");
         System.out.println("6- Un mal pour un bien: Convertie 10% de la vie de J2 en mana pour J1 \n cout : 40 puissance : - precision : -");
         System.out.println("7- Bain de lave: Attaque faible mais qui brule l'ennemie \n cout : 40 puissance : - precision : - ");
