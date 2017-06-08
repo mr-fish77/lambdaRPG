@@ -14,14 +14,14 @@ public class Sauron extends Necromancien{
         Scanner sc = new Scanner(System.in);
 
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-         System.out.println("1- Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
-        System.out.println("2- Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
-        System.out.println("3- Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
-        System.out.println("4- Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
-        System.out.println("5- La vie de J1 est divise par 2 mais celle de J2 par 4");
-        System.out.println("6- J2 perd 30% de sa vie mais J1 en perd 10% egalement");
-        System.out.println("7- Vole 10% des HP de J2");
-        System.out.println("8- J1 convertie 10% de sa vie en mana");
+         System.out.println("1- Putréfaction: Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40, puissance : 30, precision : 100");  
+        System.out.println("2- Décrépitude: Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50, puissance : 80, precision : 100");
+        System.out.println("3- Buveuse d'ame: Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
+        System.out.println("4- Tourment: Attaque faible qui provoque poison \n cout : 40, puissance : 30, precision : 60");
+        System.out.println("5- Mon precieux: La vie de J1 est divise par 2 mais celle de J2 par 4 \n cout : 120, puissance : - , precision : -");
+        System.out.println("6- Lache d'orcs: J2 perd 30% de sa vie mais J1 en perd 10% egalement \n cout : 50, puissance : - , precision : -");
+        System.out.println("7- Calin maléfique: Vole 10% des HP de J2 \n cout : 60, puissance : - , precision : -");
+        System.out.println("8- Toujours plus: J1 convertie 10% de sa vie en mana \n cout : 40, puissance : -, precision : -");
         System.out.println("9- Passer son tour" );
         
         while(attok == false){
@@ -68,16 +68,16 @@ public class Sauron extends Necromancien{
     public boolean attaque5(Personnage J2){ //vie J1/2 et J2/4
         
         boolean att = false;
-        if( this.mana >= 120){
-			J2.vie=(int)(J2.vie/4);
-            this.vie=(int)(this.vie/2);
-            System.out.println("La vie de "+this.nom+" est reduite de moitie, tandis que celle de "+J2.nom+" est reduite au quart");
-			this.mana  -= 120;
-            att = true;
-        }else{
+        if( this.mana >= 120){//condition de mana
+	    J2.vie=(int)(J2.vie/4); //divise la vie de J2 par 4
+            this.vie=(int)(this.vie/2); //divise la vie du joueur par 2
+            System.out.println(this.nom+ "rage de ne pas trouver son anneau . La vie de "+this.nom+" est reduite de moitie, tandis que celle de "+J2.nom+" est reduite au quart");
+	    this.mana  -= 120; //cout en mana de l'attaque
+            att = true;//modifie l'etat d'attaque et sors de la boucle du choix d'attaque
+        }else{//pas assez de mana
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
             System.out.println("Rechoisi ton attaque !! ");
-            att = false;
+            att = false; //renvoie au choix de l'attaque
         }
 
         
@@ -113,7 +113,7 @@ public class Sauron extends Necromancien{
             int degat = (int)(0.1*J2.vie);
             J2.vie -= degat; //inflige les dégats de l'attaque
             this.vie += degat;
-            System.out.println(this.nom +" vole 10% des PV de "+ J2.nom);
+            System.out.println(this.nom +" enbrase" +J2.nom+". Il vole ainsi 10% des PV de "+ J2.nom);
             this.mana  -=60; //cout en mana de l'attaque 
             att =true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
         }else{
@@ -132,7 +132,7 @@ public class Sauron extends Necromancien{
         if( this.mana >= 40){ //condition de mana
             this.magie=(int)(this.magie+(this.vie*0.1));
             this.vie=(int)(this.vie*0.9);
-            System.out.println(this.nom +" convertie 10% de sa vie en puissance magique");
+            System.out.println(this.nom +" veut toujour plus de magie noire. Il convertie 10% de sa vie en puissance magique");
             this.mana  -=40; //cout en mana de l'attaque 
             att =true; //modifie l'etat d'attaque et sors de la boucle du choix d'attaque
         }else{
