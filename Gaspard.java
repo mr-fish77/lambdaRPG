@@ -16,10 +16,10 @@ public class Gaspard extends Mage{
         Scanner sc = new Scanner(System.in);
 
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
+        System.out.println("1- Attaque puissante qui peut aleatoirement diminuer resistance magique de J2 \n cout : 50 puissance : 90 precision : 100");  
+        System.out.println("2- Attaque faible qui peut aleatoirement bruler J2 \n cout : 30 puissance : 50 precision : 100");
+        System.out.println("3- Attaque moyenne \n cout : 40 puissance : 80 precision : 100");
+        System.out.println("4- Augmentation magie de 20% \n cout : 40 puissance :-  precision : 100");
         System.out.println("5- Coup de bidon : inflige des degats et paralyse l'ennemi \n cout : 40, puissance : 30, precision : 60");
         System.out.println("6- Grace de l'obese : endors l'ennemi pendant 3 tours \n cout : 40, puissance : -, precision : 60");
         System.out.println("7- Rage de l'ivrogne : Inflige des degats a l'ennemi et egalement a soi meme \n cout : 80, puissance : 150, precision : 100");
