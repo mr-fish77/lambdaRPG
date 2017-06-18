@@ -16,16 +16,16 @@ public class Isis extends Necromancien{
         boolean attok = false;
         Scanner sc = new Scanner(System.in);
 
-         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
-        System.out.println("5-");
-        System.out.println("6- Attaque faible mais qui paralyse l'ennemie");
-        System.out.println("7- Cancer : Provoque brulure, poison et paralysie");
-        System.out.println("8- Haleine fetide : J1 endort J2");
-        System.out.println("9-Passer son tour" );
+        System.out.println(this.nom + " Attaque. Choisi ton attaque:");
+        System.out.println("1- Putréfaction: Attaque faible qui peut aleatoirement empoisonner l'ennemi \n cout : 40 puissance : 30 precision : 100");  
+        System.out.println("2- Décrépitude: Attaque moyenne qui peut diminuer resistance magique de J2 \n cout : 50 puissance : 80 precision : 100");
+        System.out.println("3- Buveuse d'ame: Attaque moyenne, J1 peut aleatoirement recuperer 100 HP \n cout : 50 puissance :80  precision : 100");
+        System.out.println("4- Tourment: Attaque faible qui provoque poison \n cout : 40 puissance : 30 precision : 60");
+        System.out.println("5- Calin maléfique: Vole 10% des HP de J2 \n cout : 60, puissance : - , precision : -");
+        System.out.println("6- Sarcophage: Attaque faible mais qui paralyse l'ennemie \n cout : 30, puissance : 30, precision : 100");
+        System.out.println("7- Cancer : Provoque brulure, poison et paralysie \n cout : 40, puissance : -, precision : 100");
+        System.out.println("8- Haleine fetide : J1 endort J2 \n cout : 40 puissance : - precision : 100");
+        System.out.println("9- Passer son tour" );
         
         while(attok == false){ /**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
                                   Attribut chaque attaque a un nombre*/
@@ -146,10 +146,10 @@ public class Isis extends Necromancien{
 		
         boolean att = false;
         if( this.mana >= 40){
-			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
-			if(esquive>40){
-            J2.dodo=3;
-            System.out.println(this.nom+" souffle son haleine au visage de "+J2.nom+", il s'endort sous le choc");
+	    int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
+		if(esquive>40){
+            		J2.dodo=3;
+            		System.out.println(this.nom+" souffle son haleine au visage de "+J2.nom+", il s'endort sous le choc");
             }else{
 			System.out.println(J2.nom +" esquive l'attaque");
 			}

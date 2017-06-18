@@ -9,7 +9,7 @@ public class Assassin extends Personnage{
     }
     
     
-    public boolean attaque1(Personnage J2){ // degats + baisse def spe
+    public boolean attaque1(Personnage J2){ // attaque faible + diminution defense
         
         boolean att = false;
         
@@ -20,9 +20,9 @@ public class Assassin extends Personnage{
             int degat = (int)((aleat*42*this.force*40)/(50*J2.defensePhysique*100));
 				if(degat >= 0){
                 J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque faible. Il cause " +degat+ " degats a " + J2.nom );
 				J2.defensePhysique=(int)(J2.defensePhysique*0.9);
-				System.out.println(J2.nom+" a pris peur lors de l'attaque et voit sa defense speciale diminuer de 10%");
+				System.out.println(J2.nom+" a pris peur lors de l'attaque et voit sa defense diminuer de 10%");
 					
 		
 				}else{
@@ -44,7 +44,7 @@ public class Assassin extends Personnage{
         
     }
     
-    public boolean attaque2(Personnage J2){ // degats + baisse def spe
+    public boolean attaque2(Personnage J2){ // Attaque puissante avec 1 chance sur 2 de causer 2* plus de degtas
         
         boolean att = false;
         
@@ -63,7 +63,7 @@ public class Assassin extends Personnage{
 			}
 		
 				}else{
-                System.out.println("l'attaque est sans effet. L'ennemie e trop de defense !!");
+                System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
 				}
         
             this.mana  -= 50;
@@ -79,7 +79,7 @@ public class Assassin extends Personnage{
         
     }
     
-    public boolean attaque3(Personnage J2){ // degats + baisse def spe
+    public boolean attaque3(Personnage J2){ // Attaque moyenne 
         
         boolean att = false;
         
@@ -89,7 +89,7 @@ public class Assassin extends Personnage{
 				if(degat >= 0){
 					
 				J2.vie -= degat;
-                System.out.println(this.nom + " fait une attaque puissante. Il cause " +degat+ " degats a " + J2.nom );
+                System.out.println(this.nom + " fait une attaque moderee. Il cause " +degat+ " degats a " + J2.nom );
 			
 		
 				}else{
@@ -109,13 +109,13 @@ public class Assassin extends Personnage{
         
     }
     
-    public boolean attaque4(){ 
+    public boolean attaque4(){ // vitesse + 20%
         
         boolean att = false;
         
         if( this.mana >= 40){
 			this.vitesse=(int)(this.vitesse*1.2);
-        
+        		System.out.println("La vitesse de "+this.nom+" augmente de 20%");
             this.mana  -= 40;
             att = true;
         }else{

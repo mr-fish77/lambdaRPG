@@ -23,7 +23,7 @@ public class Omar extends Assassin{
         System.out.println("5- Cours de Maths : 50% de chance de causer 200 degats \n cout : 60, puissance : -, precision : 50");
         System.out.println("6- Sous la terrasse: Attaque puissante mais J1 subit aussi des degats \n cout : 80, puissance : 150, precision : -");
         System.out.println("7- Bescherelle: Attaque tres faible \n cout : 10, puissance : 10, precision : 100");
-        System.out.println("8- Dictée: Attaque faible qui empoisonne l'ennemie \n cout : 40, puissance : 30, precision : 100");
+        System.out.println("8- Dictee: Attaque faible qui empoisonne l'ennemie \n cout : 40, puissance : 30, precision : 100");
         System.out.println("9- Passer son tour " );
         
         while(attok == false){
@@ -73,7 +73,7 @@ public class Omar extends Assassin{
 			int esquive=(int)((Math.random()*this.vitesse/J2.vitesse)*100);
 			if(esquive>50){
             J2.vie-=200;  
-            System.out.println(this.nom + " ecrit des equations avec son sang. " + J2.nom + " n'y comprend rien. Il se sent mal et subit 200 de degat");        
+            System.out.println(this.nom + " ecrit des equations avec son sang. " + J2.nom + " n'y comprend rien. Il se sent mal et subit 200 de degatS");        
             }else{
 			System.out.println(" Il ne se passe rien");
 			}

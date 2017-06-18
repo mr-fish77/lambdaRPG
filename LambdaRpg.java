@@ -136,8 +136,9 @@ public class LambdaRpg{
         
         //appelle de l'écran d'intro du jeu
         intro();
-	//Ajoute un l'abs de temps en l'intro et le jeux
-        jouerSuite(4000);
+	//Ajoute un temps de chargement
+        System.out.print("                                                            ");
+        texteLent("|||||||||||||||||||||||||||||||||||||||||||||",90);
         //efface l'ecran pour demarrer le jeux
         effaceEcran();
         

@@ -19,14 +19,14 @@ public class Donatello extends Assassin{
        
 
         System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
-        System.out.println("5- Attaque moderee mais possibilite de recuperer 100 HP");
-        System.out.println("6- Diminue vitesse de J2 de 10%");
-        System.out.println("7- Vous recuperez 100 HP");
-        System.out.println("8- Attaque faible mais qui empoisonne l'ennemi");
+        System.out.println("1-Feinte: Attaque physique faible qui diminue la defence de J2 \n cout : 30, puissance : 40, precision : 80");  
+        System.out.println("2-Sournoiserie: Attaque physique puissante \n cout : 50, puissance : 90, precision : 100");
+        System.out.println("3-Infiltration: Attaque magique puissante \n cout : 40, puissance : 80, precision : 100");
+        System.out.println("4-Pulsions: Augmente la vitesse du joueur \n cout : 40, puissance : -, precision : 100");
+        System.out.println("5-Fricadelle de tortue - Attaque puissante \n cout : 60, puissance : 110, precision : 100");  
+        System.out.println("6-Combat dans les egouts: l'adversaire est ralenti par l'eau. Vitesse ennemi -10% \n cout : 40, puissance : -, precision : 100");
+        System.out.println("7-Pizza: Le joueur recupere 100 point de vie \n cout : 50, puissance : -, precision : 100");
+        System.out.println("8-Gaz toxique: Attaque faible qui empoisonne l'ennemi \n cout : 40, puissance : 30, precision : 60");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){/**Attend que le joueur fasse un choix d'attaque valide (= choisir une attaque + mana suffisant)
@@ -77,25 +77,25 @@ public class Donatello extends Assassin{
     */
     public boolean attaque5(Personnage J2){
         boolean att = false;
-        if( this.mana >= 50){
+        if( this.mana >= 60){
 			
             int aleat = (int)(Math.random()*10+90);
-            int degat = (int)(aleat*(42*this.force*80)/(50*J2.defensePhysique*100));
+            int degat = (int)(aleat*(42*this.force*110)/(50*J2.defensePhysique*100));
             if(degat >= 0){
                 J2.vie -= degat;
                 int revi= (int)(Math.random()*100);
                 if (revi<11){
 					this.vie +=100;
-                System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom +" et recupere 100 HP");
+                System.out.println(this.nom + " appelle ses copains tortue. A eux quatres ils causent " +degat+ " degats a " + J2.nom +" et Michelangelo avait ramené une pizza +100 HP");
 			}else{
-				System.out.println(this.nom + " fait une attaque rapide. Il cause " +degat+ " degats a " + J2.nom);
+				System.out.println(this.nom + " appelle ses copains tortue. A eux quatres ils causent " +degat+ " degats a " + J2.nom);
 			}
             }else{
                 System.out.println("l'attaque est sans effet. L'ennemie a trop de defense !!");
             }
             
             
-			this.mana  -= 40;
+			this.mana  -= 60;
             att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );
@@ -129,11 +129,11 @@ public class Donatello extends Assassin{
 
     public boolean attaque7(){ // regen vie
         boolean att = false;
-        if( this.mana >= 40){
+        if( this.mana >= 50){
 			
            this.vie +=100;
                 System.out.println(this.nom + " recupere 100 PV");
-			this.mana  -= 40;
+			this.mana  -= 50;
             att = true;
         }else{
             System.out.println(this.nom + " n'a pas assez de mana pour attaquer" );

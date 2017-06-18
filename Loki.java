@@ -155,7 +155,7 @@ public class Loki extends Necromancien{
         if( this.mana >= 40){
 			
            J2.vitesse= (int)(J2.vitesse*0.9);
-                System.out.println(this.non + " place le marteau de son frere dans la poche de son ennemi. La vitesse de "+J2.nom + " diminue de 10%");
+                System.out.println(this.nom + " place le marteau de son frere dans la poche de son ennemi. La vitesse de "+J2.nom + " diminue de 10%");
 			this.mana  -= 40;
             att = true;
         }else{

@@ -23,7 +23,7 @@ public class Ezio extends Assassin{
         System.out.println("2-Sournoiserie: Attaque physique puissante \n cout : 50, puissance : 90, precision : 100");
         System.out.println("3-Infiltration: Attaque magique puissante \n cout : 40, puissance : 80, precision : 100");
         System.out.println("4-Pulsions: Augmente la vitesse du joueur \n cout : 40, puissance : -, precision : 100");
-        System.out.println("5-Bug dans la mémoire: Attaque moderee avec 10% chance de diminuer defense de J2 \n cout : 50, puissance : 90, precision : 100");
+        System.out.println("5-Bug dans la memoire: Attaque moderee avec 10% chance de diminuer defense de J2 \n cout : 50, puissance : 90, precision : 100");
         System.out.println("6-Manque de FPS: Endort J2 \n cout : 40, puissance : -, precision : 100");
         System.out.println("7-Chatte a Mireille: Attaque moyenne avec 50% chance d'annuler le cout mana \n cout : 80, puissance : 70 , precision : 90");
         System.out.println("8-Image remanante: Attaque magique moderee, 50% de chance de recuperer moitie des degats infliges en HP \n cout : 80, puissance : 70 , precision : 90");

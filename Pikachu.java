@@ -13,14 +13,14 @@ public class Pikachu extends Mage{
         Scanner sc = new Scanner(System.in);
 
          System.out.println(this.nom + " Attaque. Choisi ton attaque:");
-        System.out.println("1-");  
-        System.out.println("2-");
-        System.out.println("3-");
-        System.out.println("4-");
-        System.out.println("5- Attaque puissante mais J1 subit egalement des degats");
-        System.out.println("6- Fatal foudre : Attaque provoquant des degats aleatoires");
-        System.out.println("7- Augmente la recuperation de mana de 50%");
-        System.out.println("8- Attaque faible mais J2 est paralyse ");
+        System.out.println("1- Attaque puissante qui peut aleatoirement diminuer resistance magique de J2 \n cout : 50 puissance : 90 precision : 100");  
+        System.out.println("2- Attaque faible qui peut aleatoirement bruler J2 \n cout : 30 puissance : 50 precision : 100");
+        System.out.println("3- Attaque moyenne \n cout : 40 puissance : 80 precision : 100");
+        System.out.println("4- Augmentation magie de 20% \n cout : 40 puissance :-  precision : 100");
+        System.out.println("5- Electacle : Attaque puissante mais J1 subit egalement des degats \n cout : 80, puissance : 150, precision : 100" );
+        System.out.println("6- Fatal-foudre : Attaque provoquant des degats aleatoires \n cout : 60, puissance : aleatoire, precision : 80");
+        System.out.println("7- Chargeur : Augmente la recuperation de mana de 50% \n cout 40, puissance : -, precision : 100");
+        System.out.println("8- Cage-eclair Attaque faible mais J2 est paralyse \n cout : 40, puissance : 30, precision : 60");
         System.out.println("9-Passer son tour" );
         
         while(attok == false){
@@ -100,7 +100,7 @@ public class Pikachu extends Mage{
 			if(esquive>20){
             int degat = (int)(Math.random()*J2.vie/1.5);
             J2.vie-= degat;
-            System.out.println(J2.nom+" subit l'attaque fatale foudre et perd "+degat+" points de vie");
+            System.out.println("Pikaaachuuuuuuu, "+J2.nom+" subit l'attaque fatal-foudre et perd "+degat+" points de vie");
             }else{
 			System.out.println(J2.nom +" esquive l'attaque");
 			}
